@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testsuite name="com.draumateymid.HelloWorld.HelloWorldTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-10-22T15:25:19" hostname="Lenovo-PC" time="0.018">
+=======
+<testsuite name="com.draumateymid.HelloWorld.HelloWorldTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-10-22T15:48:06" hostname="i-1217c9a8.cs1004cloud.internal" time="0.005">
+>>>>>>> b6949b664ee7bd1ffd21bd98c9a248b6ac05742e
   <properties/>
   <testcase name="HelloWorld" classname="com.draumateymid.HelloWorld.HelloWorldTest" time="0.018"/>
   <system-out><![CDATA[]]></system-out>
