@@ -11,7 +11,7 @@
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
 apply plugin: 'application'
-apply plugin: 'distribution'
+//apply plugin: 'distribution'
 
 mainClassName = "com.draumateymid.HelloWorld.HelloWorld"
 
@@ -42,12 +42,5 @@ jar {
 }
 
 task stage {
-	dependsOn installDist
+  dependsOn installDist
 }
-
-task wrapper(type: Wrapper) {
-    gradleVersion = '2.0'
-}
-
-
-
