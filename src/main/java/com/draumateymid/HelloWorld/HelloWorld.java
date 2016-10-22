@@ -1,11 +1,9 @@
 package com.draumateymid.HelloWorld;
 
 public class HelloWorld {
-
-    private String greeting = "Hello world!";
-    //send out hello...
-    public String greet() {
-        return greeting;
-    }
+     public static void main(String[] args){
+        World world = new World();
+	System.out.println(world.greet());
+     }
 }
 
