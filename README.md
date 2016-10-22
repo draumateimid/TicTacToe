@@ -1,3 +1,4 @@
+[![Build Status](your travis urlfor the repo here.png)](your travis url for the repohere)
 Late-term Assignment
 
 Purpose
