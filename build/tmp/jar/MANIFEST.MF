@@ -1,3 +1,8 @@
+<<<<<<< HEAD
 Manifest-Version: 1.0
 Main-Class: com.draumateymid.HelloWorld.HelloWorld
 
+=======
+Manifest-Version: 1.0
+
+>>>>>>> 56975742e1f4ec70986cc905f4330ddac1d83866

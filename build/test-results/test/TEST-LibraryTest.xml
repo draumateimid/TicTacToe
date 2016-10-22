@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testsuite name="LibraryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-10-22T15:25:19" hostname="Lenovo-PC" time="0.002">
   <properties/>
   <testcase name="testSomeLibraryMethod" classname="LibraryTest" time="0.002"/>
+=======
+<testsuite name="LibraryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-10-22T16:19:21" hostname="HelgaRun" time="0.004">
+  <properties/>
+  <testcase name="testSomeLibraryMethod" classname="LibraryTest" time="0.004"/>
+>>>>>>> 56975742e1f4ec70986cc905f4330ddac1d83866
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
