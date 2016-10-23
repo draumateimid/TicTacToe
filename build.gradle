@@ -42,6 +42,14 @@ jar {
    }
 }
 
+if (JavaVersion.current().isJava8Compatible()) {
+    allprojects {
+      tasks.withType(Javadoc) {
+        options.addStringOption('Xdoclint:none', '-quiet')
+      }
+    }
+  }
+
 //prepare heroku
 task stage {
   dependsOn installDist
