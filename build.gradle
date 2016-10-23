@@ -35,12 +35,21 @@ dependencies {
     compile 'com.sparkjava:spark-core:2.5'
 }
 
+//add a manifest to the project
 jar {
    manifest {
       attributes("Main-Class": "com.draumateymid.HelloWorld.HelloWorld")
    }
 }
 
+//prepare heroku
 task stage {
   dependsOn installDist
 }
+
+//Create javadoc from source code
+task myJavadocs(type: Javadoc) {
+  source = sourceSets.main.allJava
+  classpath = configurations.compile  
+}
+
