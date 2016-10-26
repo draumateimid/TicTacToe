@@ -1,35 +1,201 @@
- ## Design report
- ### The Game
+ # Design report
+TicTacToe is a game that is often played with paper and pencil. The purpose of this project is to design a software to play the game
+
+ ## The Game
 
  The game is a designed as a console program that two human players play together. They choose who is player one and player two and take turns choosing a number from 1-9 that represents a field on the game board. The chosen field is filled up with an ‘X’ for player one and an ‘O’ for player two. If one of the players manages to fill a row of three with his symbol he has won the game and the game ends. If all nine fields have been filled up with either ‘X’ or ‘O’ and neither player managed to get three in a row, there is a draw and the game ends.
 
  ## Noun Identification
  From the description in previous section (The Game) these nouns are subtracted as potential class names;
- Game
- Players
- Turn
- Console
-  Program
- Human
- Numbers
- Game board
- Fields
- Winner
+ * Game
+ * Players
+ * Turn
+ * Console
+ * Program
+ * Human
+ * Numbers
+ * Game board
+ * Fields
+ * Winner
  
  Hérna ættum við að ígrunda hver eru valin og afhverju
+
+## Classes
+From the noun identification method above these 4 classes have been chosen
+
+### GameBoard
+```javascript
+Public GameBoard()
+    Bool check board()
+    void displayTicTac(Char[] board)
+```
+
+```javascript
+GameStatus()
+    Public boolean checkWinner(Char[] board)
+    Public boolean gameIsOver();
+    Public boolean draw();
+    Privat boolean checkWinnerHorizontal
+    Privat boolean checkWinnerDiagonal(Char[] board)
+    Privat boolean checkWinnerVertical(Char[] board)
+    Privat boolean isEmpty(int input)
+```
+
+```javascript
+Move
+    Privat Char[] board = new Char[9];
+    Public Char[] getBoard();
+    Privat void fillField(int input)
+    Privat boolean isEmpty(int input)
+    Privat Char[] board = new Char[9];
+    void getInput
+    bool checkInput
+    void movePlayer
+Kallar á : isEmpty, fillField og display board 
+```
+
+```javascript
+Player
+    privat Move m = new Move();
+    Public void move()
+    void makeWinner()
+    boolean hasWon()
+```
+```javascript
+TicTacToe
+    Privat Player X = new Player();
+    Privat Player O = new Player();
+    Private GameStatus board = new GameStatus();
+    Main() {
+        while(!GameStatus.gameIsOver() || GameStatus.Draw()){
+            X.move();
+            if(GameStatus.checkWinner();)
+            Congratulerer
+            O.move();
+        if(GameStatus.checkWinner();)
+    }
+    //bool isWinner
+```
+
+## Game logic
+Example of a game status
+setja inn mynd 
+    |X|
+--+--+--
+   |O |
+--+--+--
+   |    |O
+
+
+Collaboration rules
+Use Github.com as git repository
+Meetings are held through google hangouts
+Messages and other communication is through the facebook group
+
+
+General testing….
+
+
+Coding rules
+This section describes the general coding rules the group will work after.
+Source Files
+    Each Java file contains only a single public class or interface.
+Naming
+Class names are written in UpperCamelCase and are typically nouns
+Method names are written in lowerCamelCase and are typically verbs.
+Variable names are written in lowerCamelCase and describe the variable.
+Constants are written in all uppercase letters and words are separated by underscores.
+Commenting
+    All Java files begin with a c-style comment listing the class name, version information, creation date etc.
+    
+/**
+ * ## Large headline
+ * ### Smaller headline
+ *
+ * This is a comment that contains `code` parts.
+ *
+ * Code blocks:
+ *
+ * ```java
+ * int foo = 42;
+ * System.out.println(foo);
+ * ```
+ *
+ * Quote blocks:
+ *
+ * > This is a block quote
+ *
+ * lists:
+ *
+ *  - first item
+ *  - second item
+ *  - third item
+ *
+ * This is a text that contains an [external link][link].
+ *
+ * [link]: http://external-link.com/
+ *
+ * @param id the user id
+ * @return the user object with the passed `id` or `null` if no user with this `id` is found
+ */
+
+
+
+
+
+
+/**
+* Classname / methodname
+*
+*Version information
+*
+*Date created
+*
+*Copyright notice ???
+*
+*@param       for each parameter used in the method or class
+*@return    if applicable stating what the function returns
+*/
+Formatting
+Each time a new block is opened the indent increases by one tab.
+Braces are used with all if, else, for, do, while statements. Even when the body is empty or contains only a single statement.
+Example:
+for (int i; i < 0; i++) {
+     a = i;
+}
+Each comma and semicolon is followed by a space, excluding end of each line.
+Above all methods there should be a short summary explaining its function and its parameters.
+Each line should not exceed 120 characters, after this the line should be wrapped.
  
 
-  Quote blocks:
- 
-  > This is a block quote
- 
-  lists:
- 
-   - first item
-   - second item
-   - third item
- 
-  This is a text that contains an [external link][link].
- 
-  [link]: http://external-link.com/
- 
+
+
+
+https://docs.gradle.org/current/userguide/checkstyle_plugin.html
+
+
+
+
+GitHub Workflow
+The project group will use gitflow workflow where the git repository is stored at github.com under 
+https://github.com/draumateymid/TicTacToe. The workflow is structured with a master branch that is updated only from the branch develop. Each developer will create a new branch with a descriptive name, the developer publishes this branch to a remote repository and while working on the feature the developer makes frequent pulls from develop branch. When the feature is considered finished the developer merges changes from the develop branch, runs all tests needed before creating a pull request to apply changes from the feature branch to the branch develop.
+No member is allowed to merge the content of his/her pull request into the develop branch. In fact the setup of the repository on github permits the developer creating the pull request to merge it.
+
+
+Remote branches should not be deleted, this preserved the branching history.
+
+
+
+/*** 
+void displayTicTac
+void Xmove
+void Omove
+int Xinput
+int Oinput
+void getInput
+bool checkWinnerDown
+bool checkWinnerCross
+bool whoIsWinner
+Int main()
+
+
