@@ -1,17 +1,12 @@
- # movies
-Best ever movies?
-
-
-
- # Design report
+# Design report
 
  TicTacToe is a game that is often played with paper and pencil. The purpose of this project is to design a software to play the game
 
- ## The Game
+## The Game
 
  The game is a designed as a console program that two human players play together. They choose who is player one and player two and take turns choosing a number from 1-9 that represents a field on the game board. The chosen field is filled up with an ‘X’ for player one and an ‘O’ for player two. If one of the players manages to fill a row of three with his symbol he has won the game and the game ends. If all nine fields have been filled up with either ‘X’ or ‘O’ and neither player managed to get three in a row, there is a draw and the game ends.
 
- ## Noun Identification
+## Noun Identification
 
   From the description in previous section (The Game) these nouns are subtracted as potential class names;
  * Game
