@@ -1,6 +1,6 @@
 # Design report
 
- TicTacToe is a game that is often played with paper and pencil. The purpose of this project is to design a software to play the game
+ TicTacToe is a game that is often played with paper and pencil. The purpose of this project is to design a software to play the game.
 
 ## The Game
 
@@ -20,67 +20,70 @@
  * Fields
  * Winner
  
- Hérna ættum við að ígrunda hver eru valin og afhverju
+
 
 ## Classes
 From the noun identification method above these 4 classes have been chosen
 
 ### GameBoard
 ```javascript
-Public GameBoard()
-    Bool check board()
-    void displayTicTac(Char[] board)
+Public class DisplayGameBoard
+    Public void displayTicTac(Char[] board)
 ```
 
 ```javascript
-GameStatus()
+Public class GameStatus
     Public boolean checkWinner(Char[] board)
-    Public boolean gameIsOver();
-    Public boolean draw();
-    Privat boolean checkWinnerHorizontal
-    Privat boolean checkWinnerDiagonal(Char[] board)
-    Privat boolean checkWinnerVertical(Char[] board)
-    Privat boolean isEmpty(int input)
+	Public boolean gameIsOver()
+	Public boolean draw()
+    Private boolean checkWinnerHorizontal()
+	Private boolean checkWinnerDiagonal(Char[] board)
+	Private boolean checkWinnerVertical(Char[] board)
+	Private boolean isEmpty(int input)
 ```
 
 ```javascript
-Move
-    Privat Char[] board = new Char[9];
-    Public Char[] getBoard();
-    Privat void fillField(int input)
-    Privat boolean isEmpty(int input)
-    Privat Char[] board = new Char[9];
-    void getInput
-    bool checkInput
-    void movePlayer
-Kallar á : isEmpty, fillField og display board 
+Public class GameRunner
+    Private Char[] board = new Char[9];
+	Private void fillField(int input, string marker)
+		board[input-1] = marker;
+	Private boolean isEmpty(int input)
+    Private int getInput
+    Private boolean checkInput(int input)
+        Integer is valid (1-9)
+		isEmpty(int input)
+        Return true
+        Return false
+    Public Char[] getBoard();    
+    Public void movePlayer(string marker)
+        do
+		Int input = getInput();
+        While (checkInput(int input))
+        fillField(int input, string marker)
+        displayBoard(Char[] board)
 ```
 
 ```javascript
-Player
-    privat Move m = new Move();
-    Public void move()
-    void makeWinner()
-    boolean hasWon()
-```
-```javascript
-TicTacToe
-    Privat Player X = new Player();
-    Privat Player O = new Player();
-    Private GameStatus board = new GameStatus();
-    Main() {
-        while(!GameStatus.gameIsOver() || GameStatus.Draw()){
-            X.move();
-            if(GameStatus.checkWinner();)
-            Congratulerer
-            O.move();
-        if(GameStatus.checkWinner();)
-    }
-    //bool isWinner
+Public class TicTacToe
+    Private GameRunner runner
+    Private GameStatus board
+    
+	Main()
+    	while(!GameStatus.gameIsOver())
+        	runner.movePlayer(“X”)
+			if(GameStatus.checkWinner(runner.getBoard())
+       			runner.makeWinner(“X”)
+       			break
+			Else if(GameStatus.Draw())
+    			println(It’s a draw!)
+    			break
+			runner.movePlayer(“O”)
+			if(GameStatus.checkWinnermove.getBoard())
+    			runner.makeWinner(“O”)
+    			break
 ```
 
 ## Game logic
-Example of a game status
 setja inn mynd 
     |X|
 --+--+--
