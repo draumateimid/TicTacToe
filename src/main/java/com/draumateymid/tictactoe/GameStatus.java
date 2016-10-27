@@ -17,7 +17,7 @@ public class GameStatus{
 	}
 
 	public static boolean checkWinnerVertical(char[] board){
-		for(int i = 0; i < 9; i++){
+		for(int i = 0; i < 3; i++){
 			if(board[i] == board[i+3] && board[i+3] == board[i+6])
 				return true; 
 		}
@@ -29,6 +29,12 @@ public class GameStatus{
 			return true; 
 		if(board[2] == board[4] && board[4] == board[6])
 			return true; 
+		return false; 
+	}
+
+	public static boolean checkWinner(char[] board){
+		if(checkWinnerVertical(board) || checkWinnerDiagonal(board) || checkWinnerHorizontal(board))
+			return true;
 		return false; 
 	}
 }

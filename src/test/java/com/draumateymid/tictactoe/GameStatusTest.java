@@ -28,4 +28,10 @@ public class GameStatusTest{
 		char[] board = {'O', 'X', 'X', 'E', 'O', 'E', 'X', 'X', 'O'};
 		assertEquals(true, GameStatus.checkWinnerDiagonal(board)); 
 	}
+
+	@Test
+	public void testIfWinner(){
+		char[] board = {'O', 'O', 'X', 'E', 'O', 'X', 'E', 'X', 'X'};
+		assertEquals(true, GameStatus.checkWinner(board)); 
+	}
 }
