@@ -37,4 +37,16 @@ public class GameStatus{
 			return true;
 		return false; 
 	}
+
+	public static boolean draw(char[] board){
+		int count = 0; 
+		for(int i = 0; i < 9; i++){
+			if(board[i] == 'X')
+				count++; 
+		}
+		if(count == 5)
+			return true; 
+		else 
+			return false; 
+	}
 }

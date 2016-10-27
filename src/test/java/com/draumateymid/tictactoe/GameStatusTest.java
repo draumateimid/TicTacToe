@@ -34,4 +34,10 @@ public class GameStatusTest{
 		char[] board = {'O', 'O', 'X', 'E', 'O', 'X', 'E', 'X', 'X'};
 		assertEquals(true, GameStatus.checkWinner(board)); 
 	}
+
+	@Test
+	public void testIfDraw(){
+		char[] board = {'X', 'E', 'X', 'O', 'O', 'X', 'X', 'O', 'X'};
+		assertEquals(true, GameStatus.draw(board)); 
+	}
 }
