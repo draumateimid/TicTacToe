@@ -8,6 +8,6 @@ public class GameStatusTest{
 	@Test
 	public void testIsEmpty(){
 		char[] board = {'E', 'X', 'O', 'E', 'E', 'O', 'E', 'X', 'X'};
-		assertEquals(false, GameStatus.isEmpty(board, 1)); 
+		assertEquals(true, GameStatus.isEmpty(board, 4)); 
 	}
 }

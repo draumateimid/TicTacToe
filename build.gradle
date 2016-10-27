@@ -14,7 +14,7 @@ apply plugin: 'application'
 apply from: 'cobertura.gradle'
 //apply plugin: 'distribution'
 
-mainClassName = "com.draumateymid.tictactoe.GameStatus"
+mainClassName = "com.draumateymid.tictactoe.TicTacToe"
 
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -39,7 +39,7 @@ dependencies {
 //add a manifest to the project
 jar {
    manifest {
-      attributes("Main-Class": "com.draumateymid.tictactoe.GameStatus")
+      attributes("Main-Class": "com.draumateymid.tictactoe.TicTacToe")
    }
 }
 
@@ -61,10 +61,3 @@ task myJavadocs(type: Javadoc) {
   source = sourceSets.main.allJava
   classpath = configurations.compile  
 }
-
-tasks.withType(Test) {
-    scanForTestClasses = false
-    include "**/test*.class"
-}
-
-
