@@ -49,4 +49,11 @@ public class GameStatus{
 		else 
 			return false; 
 	}
+
+	public static boolean gameIsOver(char[] board){
+		if(checkWinner(board) || draw(board))
+			return true; 
+		else 
+			return false; 
+	}
 }
