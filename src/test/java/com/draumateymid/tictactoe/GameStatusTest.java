@@ -49,7 +49,7 @@ public class GameStatusTest{
 
 	@Test
 	public void testGameIsOverWin(){
-		char[] board = {'X', 'O', 'X', 'O', 'O', 'X', 'X', 'O', 'X'};
+		char[] board = {'X', 'X', 'X', 'O', 'O', 'E', 'E', 'E', 'E'};
 		assertEquals(true, GameStatus.gameIsOver(board)); 
 	}
 }
