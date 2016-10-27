@@ -10,4 +10,10 @@ public class GameStatusTest{
 		char[] board = {'E', 'X', 'O', 'E', 'E', 'O', 'E', 'X', 'X'};
 		assertEquals(true, GameStatus.isEmpty(board, 4)); 
 	}
+
+	@Test
+	public void testIfWinnerHorizontal(){
+		char[] board = {'X', 'X', 'X', 'E', 'O', 'O', 'E', 'E', 'E'};
+		assertEquals(true, GameStatus.checkWinnerHorizontal(board)); 
+	}
 }
