@@ -16,4 +16,10 @@ public class GameStatusTest{
 		char[] board = {'X', 'X', 'X', 'E', 'O', 'O', 'E', 'E', 'E'};
 		assertEquals(true, GameStatus.checkWinnerHorizontal(board)); 
 	}
+
+	@Test
+	public void testIfWinnerVertical(){
+		char[] board = {'E', 'O', 'X', 'E', 'O', 'X', 'E', 'E', 'X'};
+		assertEquals(true, GameStatus.checkWinnerVertical(board)); 
+	}
 }
