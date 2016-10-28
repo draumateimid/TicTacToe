@@ -27,7 +27,7 @@ public class GameStatus{
 	public static boolean checkWinnerDiagonal(char[] board){
 		if(board[0] == board[4] && board[4] == board[8] && board[0] != ' ')
 			return true; 
-		if(board[2] == board[4] && board[4] == board[6] && board[0] != ' ')
+		if(board[2] == board[4] && board[4] == board[6] && board[2] != ' ')
 			return true; 
 		return false; 
 	}
