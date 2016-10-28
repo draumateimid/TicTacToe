@@ -1,12 +1,13 @@
-/*
 package com.draumateymid.tictactoe;
 
 public class TicTacToe {
-	Private GameRunner runner = new GameRunner();
-	Private GameStatus board = new GameStatus();
+	private GameRunner runner = new GameRunner();
+	//private GameStatus board = new GameStatus();
 
 	public static void main(){
-	
+		int r = 0;
+		System.out.print(r);	 
+	/*
 		while(!GameStatus.gameIsOver()){
 
 			runner.movePlayer(“X”);
@@ -30,8 +31,8 @@ public class TicTacToe {
 				break;
 			}
 				
-
+		*/
 	}
 
 }
-*/
+

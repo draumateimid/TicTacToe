@@ -1,6 +1,6 @@
 package com.draumateymid.tictactoe;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
 
@@ -9,8 +9,15 @@ public class GameRunnerTest {
 
 	@Test
 	public void getBoardTest(){
-		Char[] b = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '}:
-		assertEquals(b, GameRunner.getBoard());
+		char[] b = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};
+		assertArrayEquals(b, GameRunner.getBoard());
 	}
 	
+/*
+	@Test
+        public void movePlayerTest(){
+                char[] b = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '}:
+                assertEquals(b, GameRunner.getBoard());
+        }
+*/
 }
