@@ -101,7 +101,6 @@ public class GameRunner{
 		}
 	}
 	
-	
 	/**
 	*This method returns current game
 	*board
