@@ -1,7 +1,8 @@
 package com.draumateymid.tictactoe;
 
 import static org.junit.Assert.assertEquals;
-
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import org.junit.Test;
 
 public class DisplayGameBoardTest {
@@ -49,5 +50,56 @@ public class DisplayGameBoardTest {
 		char [] b = {'X', 'K', 'X', 'O', 'O', 'X', 'X', 'O', 'X'};
 		assertEquals("Illegal input in board", DisplayGameBoard.stringBuilder(b));
 		
+	}
+	
+	@Test
+	public void inputStringTest(){
+		String s = "Player X turn, select position, 1-3 is top row, 4 - 6 is center row and 7 - 9 is bottom row";
+		assertEquals(s, DisplayGameBoard.inputString('X'));
+	}
+	
+	@Test
+	public void invalidInputStringTest(){
+		final ByteArrayOutputStream outContent = new ByteArrayOutputStream(); 	  			
+		System.setOut(new PrintStream(outContent)); 			 
+		String s = "Value entered is not valid please try again: ";
+		DisplayGameBoard.invalidInputMessage(); 			
+		assertEquals(s, outContent.toString()); 	
+	}
+	
+	@Test
+	public void fullFieldMessageTest(){
+		String s = "Field is not empty, please try again: ";
+		final ByteArrayOutputStream outContent = new ByteArrayOutputStream(); 	  			
+		System.setOut(new PrintStream(outContent)); 			 
+		DisplayGameBoard.fullFieldMessage(); 			
+		assertEquals(s, outContent.toString());
+	}
+	
+	@Test 	
+	public void makeWinnerXTest(){ 				
+		String s = "Congratulations! Player X is the Winner!"; 		
+		assertEquals(s, DisplayGameBoard.makeWinnerString('X')); 	
+		} 	
+	
+	@Test 	
+	public void makeWinnerOTest(){ 		 		
+		String s = "Congratulations! Player O is the Winner!"; 		
+		assertEquals(s, DisplayGameBoard.makeWinnerString('O')); 	
+		}
+		
+	@Test(expected=IllegalArgumentException.class) 	
+	public void makeWinnerWrongInputTest() throws Exception { 				
+		String s = "Player has to be either 'X' or 'O'!"; 		
+		assertEquals(s, DisplayGameBoard.makeWinnerString('A')); 	
+		}
+	
+	@Test
+	public void makeDrawTest(){
+		String s = "The game has ended with a draw!";
+		final ByteArrayOutputStream outContent = new ByteArrayOutputStream(); 	  			
+		System.setOut(new PrintStream(outContent)); 			 
+		DisplayGameBoard.makeDraw(); 			
+		assertEquals(s, outContent.toString());
 	}
 }

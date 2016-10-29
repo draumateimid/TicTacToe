@@ -21,7 +21,7 @@ public class DisplayGameBoard {
 		displayTicTac(board);
 	}
 	/**
-	 * Private function that checks whether parameter board is valid for the game.
+	 * Checks whether parameter board is valid for the game.
 	 * Throws exception if board is not valid.
 	 * @param board
 	 */
@@ -42,7 +42,7 @@ public class DisplayGameBoard {
 		}
 	}
 	/**
-	 * Public void function that displays the current game status for a given input.
+	 * Displays the current game status for a given input.
 	 * @param board
 	 */
 	public static void displayTicTac(char[] board){
@@ -50,6 +50,11 @@ public class DisplayGameBoard {
 		System.out.print(stringBuilder(board));
 	}
 	
+	/**
+	 * Creates the string that makes up the visual board.
+	 * @param board
+	 * @return s
+	 */
 	public static String stringBuilder(char[] board){
 		checkInput(board);
 		String s = "";
@@ -60,4 +65,70 @@ public class DisplayGameBoard {
 		s += " " + board[6] + " | " + board[7] + " | " + board[8] + " \n";
 		return s;
 	}
+	
+	/**
+	 * Prints out a message to user to input a new position.
+	 * @param c
+	 */
+	public static void inputMessage(char c){
+		System.out.println(inputString(c));
+	}
+	
+	/**
+	 * Creates string s with input message to user.
+	 * @param c
+	 * @return s
+	 */
+	public static String inputString(char c){
+		String s = "Player " + c + " turn, select position, 1-3 is top row, 4 - 6 is center row and 7 - 9 is bottom row";
+		return s;
+	}
+	
+	/**
+	 * Prints out a the message that the entered value was not valid.
+	 */
+	public static void invalidInputMessage(){
+		String s = "Value entered is not valid please try again: ";
+		System.out.print(s);
+	}
+	
+	/**
+	 * Prints out message that chosen field is not empty.
+	 */
+	public static void fullFieldMessage(){
+		String s = "Field is not empty, please try again: ";
+		System.out.print(s);
+	}
+	
+	/**
+	 * Prints out message that game has ended with a draw.
+	 */
+	public static void makeDraw(){
+		String s = "The game has ended with a draw!";
+		System.out.print(s);
+	}
+	
+	/**
+	 * Prints out message that the specified player has won.
+	 * @param player
+	 */
+	public static void makeWinner(char player){
+		System.out.println(makeWinnerString(player));
+	}
+	
+	/** 	
+	 * 
+	 * This method returns a string, congratulating the winner 	
+	 * 
+	 * 	
+	 * @param player 
+	 * @return s	
+	 */ 	
+	public static String makeWinnerString(char player){ 
+		if(player != 'X' && player != 'O'){
+			throw new IllegalArgumentException("Player has to be either 'X' or 'O'!");
+		}
+		String s = "Congratulations! Player " + player + " is the Winner!"; 		
+		return s; 	
+		}
 }

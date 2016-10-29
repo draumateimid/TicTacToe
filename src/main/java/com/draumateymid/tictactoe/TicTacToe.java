@@ -10,6 +10,7 @@ package com.draumateymid.tictactoe;
 */
 
 public class TicTacToe {
+
 	private GameRunner runner = new GameRunner();
 	private GameStatus board = new GameStatus();
 	private DisplayGameBoard display = new DisplayGameBoard();
@@ -20,8 +21,7 @@ public class TicTacToe {
 
 			runner.movePlayer("X");
 
-			if(board.checkWinner(runner.getBoard()))
-			{
+			if(board.checkWinner(runner.getBoard())){
 				display.makeWinner("X");
    				break;
 			}
@@ -33,13 +33,11 @@ public class TicTacToe {
 				
 			runner.movePlayer("O");
 
-			if(board.checkWinner(runner.getBoard()))
-			{
+			if(board.checkWinner(runner.getBoard())){
 				display.makeWinner("O");
 				break;
 			}
 		}		
 	}
-
 }
 
