@@ -15,7 +15,7 @@ public class TicTacToe {
 	//private GameStatus board = new GameStatus();
 	//private DisplayGameBoard display = new DisplayGameBoard(runner.getBoard());
 
-	public static void main(){
+	public static void main(String[] args){
 	
 		while(!GameStatus.gameIsOver(GameRunner.getBoard())){
 
