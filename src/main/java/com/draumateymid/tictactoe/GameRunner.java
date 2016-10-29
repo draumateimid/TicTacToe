@@ -99,7 +99,6 @@ public class GameRunner{
 			throw new IllegalArgumentException("Marker has to be either 'X' or 'O'!");
 		}
 	}
-
 	
 	/**
 	*This method returns current game
