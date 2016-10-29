@@ -10,7 +10,8 @@ public class GameRunnerTest {
 	@Test
 	public void getBoardTest(){
 		char[] b = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};
-		assertArrayEquals(b, GameRunner.getBoard());
+		GameRunner runner = new GameRunner();
+		assertArrayEquals(b, runner.getBoard());
 	}
 	
 /*
