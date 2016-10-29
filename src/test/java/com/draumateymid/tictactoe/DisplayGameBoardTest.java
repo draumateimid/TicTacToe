@@ -94,12 +94,12 @@ public class DisplayGameBoardTest {
 		assertEquals(s, DisplayGameBoard.makeWinnerString('A')); 	
 		}
 	
-	@Test 	
-	public void TestHello(){ 		
+	@Test
+	public void makeDrawTest(){
+		String s = "The game has ended with a draw!";
 		final ByteArrayOutputStream outContent = new ByteArrayOutputStream(); 	  			
 		System.setOut(new PrintStream(outContent)); 			 
-		String s = "Value entered is not valid please try again: ";
-		DisplayGameBoard.invalidInputMessage(); 			
-		assertEquals(s, outContent.toString()); 	
-		}
+		DisplayGameBoard.makeDraw(); 			
+		assertEquals(s, outContent.toString());
+	}
 }
