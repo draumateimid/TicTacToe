@@ -1,7 +1,8 @@
 package com.draumateymid.tictactoe;
 
 import static org.junit.Assert.assertEquals;
-
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import org.junit.Test;
 
 public class DisplayGameBoardTest {
@@ -53,20 +54,26 @@ public class DisplayGameBoardTest {
 	
 	@Test
 	public void inputStringTest(){
-		String s = "Player X turn,  select position, 1-3 is top row, 4 - 6 is center row and 7 - 9 is bottom row";
+		String s = "Player X turn, select position, 1-3 is top row, 4 - 6 is center row and 7 - 9 is bottom row";
 		assertEquals(s, DisplayGameBoard.inputString('X'));
 	}
 	
 	@Test
 	public void invalidInputStringTest(){
+		final ByteArrayOutputStream outContent = new ByteArrayOutputStream(); 	  			
+		System.setOut(new PrintStream(outContent)); 			 
 		String s = "Value entered is not valid please try again: ";
-		assertEquals(s, DisplayGameBoard.invalidInputString());
+		DisplayGameBoard.invalidInputMessage(); 			
+		assertEquals(s, outContent.toString()); 	
 	}
 	
 	@Test
-	public void fullFieldtringTest(){
+	public void fullFieldMessageTest(){
 		String s = "Field is not empty, please try again: ";
-		assertEquals(s, DisplayGameBoard.fullFieldString());
+		final ByteArrayOutputStream outContent = new ByteArrayOutputStream(); 	  			
+		System.setOut(new PrintStream(outContent)); 			 
+		DisplayGameBoard.fullFieldMessage(); 			
+		assertEquals(s, outContent.toString());
 	}
 	
 	@Test 	
@@ -86,4 +93,13 @@ public class DisplayGameBoardTest {
 		String s = "Player has to be either 'X' or 'O'!"; 		
 		assertEquals(s, DisplayGameBoard.makeWinnerString('A')); 	
 		}
+	
+	@Test
+	public void makeDrawTest(){
+		String s = "The game has ended with a draw!";
+		final ByteArrayOutputStream outContent = new ByteArrayOutputStream(); 	  			
+		System.setOut(new PrintStream(outContent)); 			 
+		DisplayGameBoard.makeDraw(); 			
+		assertEquals(s, outContent.toString());
+	}
 }
