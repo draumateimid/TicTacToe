@@ -11,7 +11,14 @@ package com.draumateymid.tictactoe;
  */
 
 public class GameStatus { 
-
+	
+	/**
+	 * Empty constructor
+	 */
+	public GameStatus() {
+		
+	}
+	
 	/**
 	 * Function to check horizontal win.
 	 * @param char[] board

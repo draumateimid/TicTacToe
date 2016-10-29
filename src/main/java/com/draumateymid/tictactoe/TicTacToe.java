@@ -11,30 +11,30 @@ package com.draumateymid.tictactoe;
 
 public class TicTacToe {
 
-	private GameRunner runner = new GameRunner();
-	private GameStatus board = new GameStatus();
-	private DisplayGameBoard display = new DisplayGameBoard();
+	//private GameRunner runner = new GameRunner();
+	//private GameStatus board = new GameStatus();
+	//private DisplayGameBoard display = new DisplayGameBoard(runner.getBoard());
 
 	public static void main(){
 	
-		while(!board.gameIsOver()){
+		while(!GameStatus.gameIsOver(GameRunner.getBoard())){
 
-			runner.movePlayer("X");
+			GameRunner.movePlayer('X');
 
-			if(board.checkWinner(runner.getBoard())){
-				display.makeWinner("X");
+			if(GameStatus.checkWinner(GameRunner.getBoard())){
+				DisplayGameBoard.makeWinner('X');
    				break;
 			}
    				
-			else if(board.draw()){
-				display.makeDraw();
+			else if(GameStatus.draw(GameRunner.getBoard())){
+				DisplayGameBoard.makeDraw();
 				break;
 			}
 				
-			runner.movePlayer("O");
+			GameRunner.movePlayer('O');
 
-			if(board.checkWinner(runner.getBoard())){
-				display.makeWinner("O");
+			if(GameStatus.checkWinner(GameRunner.getBoard())){
+				DisplayGameBoard.makeWinner('O');
 				break;
 			}
 		}		

@@ -22,7 +22,7 @@ public class GameRunner{
 	*GameRunner constructor, initializes the game board
 	*with all empty fields
 	*/
-	GameRunner(){
+	public GameRunner(){
 		for (int i = 0; i < 9; i++)
 			board[i] = ' ';
 	}

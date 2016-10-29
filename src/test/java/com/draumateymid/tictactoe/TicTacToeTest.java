@@ -1,18 +1,8 @@
 
-package com.draumateymid.tictactoe;
+/*package com.draumateymid.tictactoe;
 
-public class TicTacToeTest{
-
-	@Test
-	public void gameStatusWinnerX(){
-		GameRunner runner = new GameRunner();
-		GameStatus board = new GameStatus();
-		DisplayGameBoard display = new DisplayGameBoard();
-		String s = "Congratulations! Player X is the Winner!";
-		assertArrayEquals(s, makeWinner("X"));
-	}
-
-}
+import static org.junit.Assert.assertEquals; 
+import org.junit.Test; 
 
 class stubGameStatus implements GameStatus {
 
@@ -59,3 +49,15 @@ class stubDisplayGameBoard implements DisplayGameBoard {
 	}
 
 }
+
+public class TicTacToeTest{
+
+	@Test
+	public void gameStatusWinnerX(){
+		String s = "Congratulations! Player X is the Winner!";
+		assertEquals(s, stubDisplayGameBoard.makeWinner('X'));
+	}
+
+}
+*/
+
