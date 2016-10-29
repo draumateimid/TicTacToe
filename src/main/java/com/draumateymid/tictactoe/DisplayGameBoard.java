@@ -60,4 +60,50 @@ public class DisplayGameBoard {
 		s += " " + board[6] + " | " + board[7] + " | " + board[8] + " \n";
 		return s;
 	}
+	
+	public static void inputMessage(char c){
+		System.out.println(inputString(c));
+	}
+	
+	public static String inputString(char c){
+		String s = "Player " + c + " turn,  select position, 1-3 is top row, 4 - 6 is center row and 7 - 9 is bottom row";
+		return s;
+	}
+	
+	public static void invalidInputMessage(){
+		System.out.print(invalidInputString());
+	}
+	
+	public static String invalidInputString(){
+		String s = "Value entered is not valid please try again: ";
+		return s;	
+	}
+	
+	public static void fullFieldMessage(){
+		System.out.print(fullFieldString());
+	}
+	
+	public static String fullFieldString(){
+		String s = "Field is not empty, please try again: ";
+		return s;	
+	}
+	
+	public static void makeWinner(char player){
+		System.out.println(makeWinnerString(player));
+	}
+	
+	/** 	
+	 * 
+	 * This method returns a string, congratulating the winner 	
+	 * 
+	 * 	
+	 * @param player 	
+	 */ 	
+	public static String makeWinnerString(char player){ 
+		if(player != 'X' && player != 'O'){
+			throw new IllegalArgumentException("Player has to be either 'X' or 'O'!");
+		}
+		String s = "Congratulations! Player " + player + " is the Winner!"; 		
+		return s; 	
+		}
 }

@@ -50,4 +50,40 @@ public class DisplayGameBoardTest {
 		assertEquals("Illegal input in board", DisplayGameBoard.stringBuilder(b));
 		
 	}
+	
+	@Test
+	public void inputStringTest(){
+		String s = "Player X turn,  select position, 1-3 is top row, 4 - 6 is center row and 7 - 9 is bottom row";
+		assertEquals(s, DisplayGameBoard.inputString('X'));
+	}
+	
+	@Test
+	public void invalidInputStringTest(){
+		String s = "Value entered is not valid please try again: ";
+		assertEquals(s, DisplayGameBoard.invalidInputString());
+	}
+	
+	@Test
+	public void fullFieldtringTest(){
+		String s = "Field is not empty, please try again: ";
+		assertEquals(s, DisplayGameBoard.fullFieldString());
+	}
+	
+	@Test 	
+	public void makeWinnerXTest(){ 				
+		String s = "Congratulations! Player X is the Winner!"; 		
+		assertEquals(s, DisplayGameBoard.makeWinnerString('X')); 	
+		} 	
+	
+	@Test 	
+	public void makeWinnerOTest(){ 		 		
+		String s = "Congratulations! Player O is the Winner!"; 		
+		assertEquals(s, DisplayGameBoard.makeWinnerString('O')); 	
+		}
+		
+	@Test(expected=IllegalArgumentException.class) 	
+	public void makeWinnerWrongInputTest() throws Exception { 				
+		String s = "Player has to be either 'X' or 'O'!"; 		
+		assertEquals(s, DisplayGameBoard.makeWinnerString('A')); 	
+		}
 }
