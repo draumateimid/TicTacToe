@@ -103,18 +103,6 @@ public class GameRunner{
 	
 	
 	/**
-	*This method returns a string, congratulating the winner
-	*
-	*@param player
-	*/
-	public static String makeWinner(char player){
-		checkInput(player);
-		String s = "Congratulations player " + player + " is the Winner!";
-		return s;
-	}
-	
-	
-	/**
 	*This method returns current game
 	*board
 	*

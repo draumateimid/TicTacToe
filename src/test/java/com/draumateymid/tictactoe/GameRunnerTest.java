@@ -42,27 +42,7 @@ public class GameRunnerTest {
 			runner.movePlayer('O');
 			assertArrayEquals(b, runner.getBoard());
 	}
-	
-	@Test
-	public void makeWinnerXTest(){
-		GameRunner runner = new GameRunner();
-		String s = "Congratulations player X is the Winner!";
-		assertEquals(s, runner.makeWinner('X'));
-	}
-	@Test
-	public void makeWinnerOTest(){
-		GameRunner runner = new GameRunner();
-		String s = "Congratulations player O is the Winner!";
-		assertEquals(s, runner.makeWinner('O'));
-	}
-	
-	@Test(expected=IllegalArgumentException.class)
-	public void makeWinnerWrongInputTest() throws Exception {
-		GameRunner runner = new GameRunner();
-		String s = "Marker has to be either 'X' or 'O'!";
-		assertEquals(s, runner.makeWinner('A'));
-	}
-	
+
 }
 
 
