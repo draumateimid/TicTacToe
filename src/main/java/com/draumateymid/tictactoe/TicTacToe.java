@@ -1,35 +1,44 @@
 package com.draumateymid.tictactoe;
 
+/**
+*##TicTacToe class
+*
+*This class handles the main method of the game
+*@author Draumateymid
+*Date created 23.10.2016
+*
+*/
+
 public class TicTacToe {
-	Private GameRunner runner = new GameRunner();
-	Private GameStatus board = new GameStatus();
+	private GameRunner runner = new GameRunner();
+	private GameStatus board = new GameStatus();
+	private DisplayGameBoard display = new DisplayGameBoard();
 
 	public static void main(){
 	
-		while(!GameStatus.gameIsOver()){
+		while(!board.gameIsOver()){
 
-			runner.movePlayer(“X”);
+			runner.movePlayer("X");
 
-			if(GameStatus.checkWinner(runner.getBoard())
+			if(board.checkWinner(runner.getBoard()))
 			{
-				runner.makeWinner(“X”);
+				display.makeWinner("X");
    				break;
 			}
    				
-			else if(GameStatus.Draw()){
-				println(It’s a draw!)
+			else if(board.draw()){
+				display.makeDraw();
 				break;
 			}
 				
-			runner.movePlayer(“O”);
+			runner.movePlayer("O");
 
-			if(GameStatus.checkWinnermove.getBoard())
+			if(board.checkWinner(runner.getBoard()))
 			{
-				runner.makeWinner(“O”);
+				display.makeWinner("O");
 				break;
 			}
-				
-
+		}		
 	}
 
 }
