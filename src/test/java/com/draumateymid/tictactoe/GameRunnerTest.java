@@ -11,7 +11,7 @@ public class GameRunnerTest {
 	public void getBoardTest(){
 		char[] b = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};
 		GameRunner runner = new GameRunner();
-		assertArrayEquals(b, runner.getBoard());
+		assertArrayEquals(b, GameRunner.getBoard());
 	}
 	
 	@Test
@@ -25,6 +25,16 @@ public class GameRunnerTest {
 			runner.movePlayer('X');
 			assertArrayEquals(b, runner.getBoard());
 	}
+		
+	@Test(expected=IllegalArgumentException.class) 
+	public void movePlayerWrongTypeTest()  throws Exception {
+			GameRunner runner = new GameRunner();
+			runner.movePlayer('A');
+			String s = "Marker has to be either 'X' or 'O'!";
+			assertEquals(s, runner.getBoard());
+	}
+
+	
 	
 	@Test
 	public void movePlayerXandOTest(){
@@ -42,6 +52,8 @@ public class GameRunnerTest {
 			runner.movePlayer('O');
 			assertArrayEquals(b, runner.getBoard());
 	}
+	
+	
 
 }
 

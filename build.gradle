@@ -34,6 +34,7 @@ dependencies {
     // 'test.useTestNG()' to your build script.
     testCompile 'junit:junit:4.12'
     compile 'com.sparkjava:spark-core:2.5'
+	
 }
 
 //add a manifest to the project
@@ -61,3 +62,4 @@ task myJavadocs(type: Javadoc) {
   source = sourceSets.main.allJava
   classpath = configurations.compile  
 }
+

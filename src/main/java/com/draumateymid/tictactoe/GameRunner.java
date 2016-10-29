@@ -17,7 +17,6 @@ import java.util.Scanner;
 public class GameRunner{
 
 	private static char[] board = new char[9];
-	private static DisplayGameBoard display;
 	
 	/**
 	*GameRunner constructor, initializes the game board
@@ -66,6 +65,22 @@ public class GameRunner{
 		return true;
 	}
 	
+	/**
+	*This method checks if input is valid, i.e between 0-9.
+	*Throws exception otherwise.
+	*
+	*@param input
+	*@param marker
+    */
+    private static void checkInput(char marker) throws IllegalArgumentException{
+		if (marker == 'X' || marker == 'O'){
+			return;
+		}
+		else{ 
+			throw new IllegalArgumentException("Marker has to be either 'X' or 'O'!");
+		}
+	}
+	
 
 	/**
 	*This method checks if input is valid, i.e between 0-9.
@@ -85,21 +100,6 @@ public class GameRunner{
 		}
 	}
 
-	/**
-	*This method checks if input is valid, i.e between 0-9.
-	*Throws exception otherwise.
-	*
-	*@param input
-	*@param marker
-    */
-    private static void checkInput(char marker) throws IllegalArgumentException{
-		if (marker == 'X' || marker == 'O'){
-			return;
-		}
-		else{ 
-			throw new IllegalArgumentException("Marker has to be either 'X' or 'O'!");
-		}
-	}
 	
 	/**
 	*This method returns current game
@@ -118,15 +118,15 @@ public class GameRunner{
 	public static void movePlayer(char marker){
 		int input = -1;
 		InputStream userInput = System.in;
-
-		System.out.print("Player " + marker + " turn,  select position, 1-3 is top row, 4 - 6 is center row and 7 - 9 is bottom row");
+		checkInput(marker);
+		DisplayGameBoard.inputMessage(marker); 
 		input = getUserInput(userInput);
 		while (!isEmpty(input)){
-			System.out.println("Field is not empty, please try again");
+			DisplayGameBoard.fullFieldMessage();
 			input = getUserInput(userInput);
 		}
 		fillField(input, marker);
-		display.displayTicTac(board);
+		DisplayGameBoard.displayTicTac(board);
 	}
 	/**
 	*Method continiusly asks user for input 
@@ -138,9 +138,10 @@ public class GameRunner{
 		Scanner userInput = new Scanner(in);
 		int input = userInput.nextInt();
 		while (input < 1  || input > 9){
-			System.out.print("Value entered is not valid please try again: ");
+			DisplayGameBoard.invalidInputMessage();
 			input = userInput.nextInt();
-		}		
+		}
+		userInput.close();
 		return input;
 	}
 }
