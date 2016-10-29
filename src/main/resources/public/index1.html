@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TicTacToe</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- load bootstrap for ui -->
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+        <link rel="icon" type="image/png" href="favicon.png">
+		<style>
+			#res5 {
+				border: 1px solid black;
+			}
+			#res {
+				border-left: 1px solid black;
+				
+			}
+		</style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>TicTacToe</h1>
+            <p>The game</p>
+			<table style="width: 10%;" >
+			<tbody>
+			<tr>
+				<td> <div id = "res1">X</div> 
+				<a href="#" id="1" onclick="myFunction1()">_</a>
+				<script type="text/javascript">
+					var h = document.getElementById("res1");
+					var j = document.getElementById("1")
+					h.style.display="none";
+					j.style.display = "inline";
+					function myFunction1(){
+						h.style.display="inline";
+						j.style.display="none";
+						return false;
+						}
+				</script></td>
+				<td> <div id = "res2">X</div>
+				<a href="#" id="2" onclick="myFunction2()">_</a>
+				<script type="text/javascript">
+					var h = document.getElementById("res2");
+					var j = document.getElementById("2")
+					h.style.display="none";
+					j.style.display = "inline";
+					function myFunction2(){
+						h.style.display="inline";
+						j.style.display="none";
+						return false;
+						}
+				</script></td>
+				<td> <div id = "res3">X</div>  
+				<a href="#" id="3" onclick="myFunction3()">_</a>
+				<script type="text/javascript">
+					var h = document.getElementById("res3");
+					var j = document.getElementById("23")
+					h.style.display="none";
+					j.style.display = "inline";
+					function myFunction3(){
+						h.style.display="inline";
+						j.style.display="none";
+						return false;
+						}
+				</script></td>
+			</tr>
+			<tr>
+				<td> <div id = "res4">O</div>  
+				<a href="#" id="4" onclick="myFunction4()">_</a>
+				<script type="text/javascript">
+					var h = document.getElementById("res4");
+					var j = document.getElementById("4")
+					h.style.display="none";
+					j.style.display = "inline";
+					function myFunction4(){
+						h.style.display="inline";
+						j.style.display="none";
+						return false;
+						}
+				</script></td>
+				<td> <div id = "res5" class="center">O</div>  
+				<a href="#" id="5" onclick="myFunction5()">_</a>
+				<script type="text/javascript">
+					var h = document.getElementById("res5");
+					var j = document.getElementById("5")
+					h.style.display="none";
+					j.style.display = "inline";
+					function myFunction5(){
+						h.style.display="inline";
+						j.style.display="none";
+						return false;
+						}
+				</script></td>
+				<td> <div id = "res6">O</div>  
+				<a href="#" id="6" onclick="myFunction6()">_</a>
+				<script type="text/javascript">
+					var h = document.getElementById("res6");
+					var j = document.getElementById("6")
+					h.style.display="none";
+					j.style.display = "inline";
+					function myFunction6(){
+						h.style.display="inline";
+						j.style.display="none";
+						return false;
+						}
+				</script></td>
+			</tr>
+			<tr>
+				<td> <div id = "res7">X</div>  
+				<a href="#" id="7" onclick="myFunction7()">_</a>
+				<script type="text/javascript">
+					var h = document.getElementById("res7");
+					var j = document.getElementById("7")
+					h.style.display="none";
+					j.style.display = "inline";
+					function myFunction7(){
+						h.style.display="inline";
+						j.style.display="none";
+						return false;
+						}
+				</script></td>
+				<td> <div id = "res8">X</div>  
+				<a href="#" id="8" onclick="myFunction8()">_</a>
+				<script type="text/javascript">
+					var h = document.getElementById("res8");
+					var j = document.getElementById("8")
+					h.style.display="none";
+					j.style.display = "inline";
+					function myFunction8(){
+						h.style.display="inline";
+						j.style.display="none";
+						return false;
+						}
+				</script></td>
+				<td> <div id = "res9">X</div>  
+				<a href="#" id="9" onclick="myFunction9()">_</a>
+				<script type="text/javascript">
+					var h = document.getElementById("res9");
+					var j = document.getElementById("9")
+					h.style.display="none";
+					j.style.display = "inline";
+					function myFunction9(){
+						h.style.display="inline";
+						j.style.display="none";
+						return false;
+						}
+				</script></td>
+			</tr>
+			</tbody>
+			</table>
+			
+			
+			
+			
+			
+			
+			
+            <form method="post" action="/setName" class="form-inline" role="form">
+                <div class="form group">
+                    <input type="text" name="firstName" id="firstName"
+                    placeholder="Chuck">
+                </div>
+                <div class="form group">
+                    <input type="text" name="lastName" id="lastName"
+                    placeholder="Norris">
+                </div>
+                <button type="submit"> ok </button>
+            </form>
+            <hr>
+            <div id="results" class="alert alert-info">Try it out.</div>
+            <hr>
+        </div>
+
+		
+        <!-- Load jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+        <!-- Use ajax to submit form, retrive joke and display on page -->
+        <script>
+        $(document).ready(function() {
+            var form = $('form');
+            form.submit(function( event ) {
+                var firstName = $("#firstName").val();
+                var lastName = $("#lastName").val();
+                $.ajax({
+                    type: form.attr('method'),
+                    url: form.attr('action'),
+                    data: 'firstName=' + firstName + '&lastName=' + lastName
+                }).done(function() {
+                    $('#results').html('Name set as: ' + firstName + ' ' +
+                        lastName + '.').attr('class', 'alert alert-success');
+                }).fail(function() {
+                    $('#results').html('Unable to set name...').attr('class', 'alert alert-danger');
+                });
+                event.preventDefault();
+            });
+        });
+        </script>
+    </body>
+</html>
