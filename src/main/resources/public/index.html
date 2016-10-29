@@ -7,11 +7,46 @@
         <!-- load bootstrap for ui -->
         <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
         <link rel="icon" type="image/png" href="favicon.png">
+		<style>
+			#res5 {
+				border: 1px solid black;
+			}
+			#res {
+				border-left: 1px solid black;
+				
+			}
+		</style>
     </head>
     <body>
         <div class="container">
             <h1>TicTacToe</h1>
-            <p>Change the name of the character from the jokes!</p>
+            <p>The game</p>
+			<table style="width: 10%;" >
+			<tbody>
+			<tr>
+				<td> <div id = "res1">X</div>  </td>
+				<td> <div id = "res2">X</div>  </td>
+				<td> <div id = "res3">X</div>  </td>
+			</tr>
+			<tr>
+				<td> <div id = "res4">O</div>  </td>
+				<td> <div id = "res5" class="center">O</div>  </td>
+				<td> <div id = "res6">O</div>  </td>
+			</tr>
+			<tr>
+				<td> <div id = "res6">X</div>  </td>
+				<td> <div id = "res7">X</div>  </td>
+				<td> <div id = "res8">X</div>  </td>
+			</tr>
+			</tbody>
+			</table>
+			
+			
+			
+			
+			
+			
+			
             <form method="post" action="/setName" class="form-inline" role="form">
                 <div class="form group">
                     <input type="text" name="firstName" id="firstName"
