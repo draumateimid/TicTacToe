@@ -1,0 +1,22 @@
+.td4, .td5, .td6 {
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+.td5, .td2, .td8 {
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+
+td {
+	height: 50px;
+}
+
+table {
+	width: 150px;
+}
+
+#res1, #res2, #res3, #res4,
+#res5, #res6, #res7, #res8,
+#res9 {
+	margin: 15px;
+}
