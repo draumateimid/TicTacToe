@@ -1,10 +1,11 @@
-###Administration Manual
+### Administration Manual
 
 TicTacToe is a .....
 
-System Requirement
-
-Step 1.
+## System Requirement
+No minimum requirement.
+ 
+## 
 Step 1.
 |OS       | Task   |
 |---------|--------|
@@ -19,4 +20,6 @@ Step 2.
 |Linux    |        |
 |Mac      |        |
 
+
+hugmynd að uppsetningu:
 https://www.tutorialspoint.com/easymock/easymock_environment_setup.htm
