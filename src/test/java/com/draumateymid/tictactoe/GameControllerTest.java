@@ -1,4 +1,4 @@
-/*
+
 package com.draumateymid.tictactoe;
 
 import static org.junit.Assert.assertEquals; 
@@ -9,53 +9,48 @@ public class GameControllerTest{
 	private GameController controller = new GameController();
 	
 	@Test
-	public void makeMoveXWinsTest(){
-		stubGameStatus status = new stubGameStatus();
-		stubGameRunner runner = new stubGameRunner();
-		
-		assertEquals("winnerX", controller.checkWinner(runner.getBoard()));
+	public void makeMoveXTest(){
+		assertEquals("X", controller.makeMove("1"));
+	}
+	
+	@Test
+	public void makeMoveOTest(){
+		controller.makeMove("2");
+		assertEquals("O", controller.makeMove("5"));
+	}
+	
+	@Test(expected=IllegalArgumentException.class)
+	public void makeMoveIlligalInputTest() throws IllegalArgumentException{
+		assertEquals("Input is not an intege between 1-9!", controller.makeMove("0"));
+	}
+	
+	@Test
+	public void makeMoveXWinnerTest(){
+		controller.makeMove("1");
+		controller.makeMove("2");
+		controller.makeMove("4");
+		controller.makeMove("5");
+		assertEquals("winnerX", controller.makeMove("7"));
+	}
+	
+	@Test
+	public void makeMoveOWinnerTest(){
+		controller.makeMove("2");
+		controller.makeMove("1");
+		controller.makeMove("3");
+		controller.makeMove("4");
+		controller.makeMove("5");
+		assertEquals("winnerO", controller.makeMove("7"));
+	}
+	
+	@Test
+	public void makeMoveDrawTest(){
+		controller.makeMove("2");
+		controller.makeMove("1");
+		controller.makeMove("3");
+		controller.makeMove("4");
+		controller.makeMove("5");
+		assertEquals("winnerO", controller.makeMove("7"));
 	}
 }
 
-class stubGameStatus extends GameStatus {
-
-	public stubGameStatus(){
-		
-	}
-	
-	public static boolean gameIsOver(){
-		return false;
-	}
-
-	public static boolean checWinner(char[] board){
-		return true;
-	}
-
-	public static boolean draw(char[] board){
-		return true;
-	}
-	
-	private static boolean checkWinnerHorizontal(char[] board) {
-		return true;
-	}
-	
-	private static boolean checkWinnerVertical(char[] board) {
-		return true;
-	}
-		
-	private static boolean checkWinnerDiagonal(char[] board) {
-		return true;
-	}
-	
-}
-
-class stubGameRunner implements GameRunner {
-	
-
-	public static char[] getBoard(){
-		char[] board = {'X', 'O', 'X', 'X', 'O', 'X', 'O', 'O', 'X'};
-		return board;
-	}
-
-}
-*/
