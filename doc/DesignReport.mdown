@@ -1,11 +1,16 @@
 # Design report
 
-TicTacToe is a game that is often played with paper and pencil. The purpose of this project is to design a software to play the game. The initial design is for a console version of the game. The second version is web based version. Both design is included in this report.
+TicTacToe is a game that is often played with paper and pencil. The purpose of this project is to design a software to play the game. The initial design is for a console version of the game. The second version is web based. The design for both is included in this report.
 
 ## The Game
-In both designs the game is for two human players. Player X is first
+In both versions the game is designed for two human players. Player X makes the first move. Next player O makes a move and in that manner the two players take turns making their move. Each move involves choosing a field on a 3x3 board and consequently the field is marked with the players symbol. The player who manages to make three symbols in a row wins the game. The rows can be vertical, horizontal and diagonal. If all nine fields on the board have been filled up with either ‘X’ or ‘O’ and neither player managed to get three in a row the game ends with a draw.
+
+
 ### The console version
-The game is a designed as a console program for two human players. They choose who is player one and player two and take turns choosing a number from 1-9 that represents a field on the game board. The chosen field is filled up with an X for player one and an O for player two. If one of the players manages to fill a row of three with his symbol he has won the game and the game ends. If all nine fields have been filled up with either ‘X’ or ‘O’ and neither player managed to get three in a row, there is a draw and the game ends.
+The game runs in a console environment such as command prompt, git bash or Linux terminal. The two players decide who is player one and player two and take turns entering a number from 1-9 that represents a field on the game board. The chosen field is filled up with an X for player one and an O for player two. If one of the players manages to fill a row of three with his symbol the game writes out a message declaring that player the winner and the game stops running. If neither player manages a win the game prints out that a draw has been made and the game stops sunning.
+
+### The web based version
+The game runs on a website. The players see an empty TicTacToe board and choose a field by clicking on it with the mouse. After the click the field is marked with an X for the first player and an O for the second player. As with the console version, the game prints out a message if either player has won or if there is a draw. In this instance it is done by redirecting to a new url with the message. In both cases the game ends but the players get the option to start a new game by clicking the relevant button. 
 
 ![alt text][logo]
 
@@ -14,7 +19,7 @@ The game is a designed as a console program for two human players. They choose w
 ## The web version
 
 ## Noun Identification
-From the description in previous section (The Game) these nouns are subtracted as potential class names;
+From the description in previous section (The Game) these nouns have been subtracted as potential class names:
  * Game
  * Players
  * Turn
@@ -27,7 +32,7 @@ From the description in previous section (The Game) these nouns are subtracted a
  * Winner
  
 ### Classes
-From the noun identification method above these 4 classes have been chosen as  the original design.
+From the noun identification method above these 4 classes, and their functions, have been chosen as the original design.
 
 ```javascript
 Public class DisplayGameBoard
@@ -49,79 +54,56 @@ Public class GameStatus
 Public class GameRunner
     Private Char[] board = new Char[9];
     Private void fillField(int input, string marker)
-        board[input-1] = marker;
     Private boolean isEmpty(int input)
     Private int getInput
     Private boolean checkInput(int input)
-        Integer is valid (1-9)
-        isEmpty(int input)
-        Return true
-        Return false
     Public Char[] getBoard();    
     Public void movePlayer(string marker)
-        do
-        Int input = getInput();
-        While (checkInput(int input))
-        fillField(int input, string marker)
-        displayBoard(Char[] board)
 ```
 
 ```javascript
 Public class TicTacToe
     Private GameRunner runner
     Private GameStatus board
-    
     Main()
-        while(!GameStatus.gameIsOver())
-            runner.movePlayer(“X”)
-            if(GameStatus.checkWinner(runner.getBoard())
-                runner.makeWinner(“X”)
-                break
-            Else if(GameStatus.Draw())
-                println(It’s a draw!)
-                break
-            runner.movePlayer(“O”)
-            if(GameStatus.checkWinnermove.getBoard())
-                runner.makeWinner(“O”)
-                break
 ```
+
 ## Collaboration
-The teams meetings are held through google hangouts. Messages and other communication is through the facebook group and the work scheduled is on google drive.
+The teams meetings will be held through google hangouts. Messages and other communication is through the facebook group and the work schedule is stored on google drive.Minutes will be kept from each meeting and will also be stored on google drive. 
 
 ### GitHub
-The project group will use gitflow workflow where the git repository is stored at github under 
-https://github.com/draumateymid/TicTacToe. The workflow is structured with a master branch that is updated only from the branch develop. Each developer will create a new branch with a descriptive name, the developer publishes this branch to a remote repository and while working on the feature the developer makes frequent pulls from develop branch. When the feature is considered finished the developer merges changes from the develop branch, runs all tests needed before creating a pull request to apply changes from the feature branch to the branch develop.
+The team will use gitflow workflow where the git repository is stored on github under https://github.com/draumateymid/TicTacToe. The workflow is structured with a master branch that is updated only from the main development branch, develop. The team will be split into smaller groups, each collaborating on some feature. Each group will create a new branch with a name descriptive of the work they are doing. The group publishes this branch to the remote githup repository and while working on each feature the developer frequently pulls from the develop branch. 
 
-No member is allowed to merge the content of his/her pull request into the develop branch. In fact the setup of the repository on github permits the developer creating the pull request to merge it. Remote branches should not be deleted, this preserved the branching history.
+When significant steps have been made the group commits the work onto the branch with a descriptive message. When the feature is considered finished and after running tests, the developers merge the working branch onto the develop branch by creating a pull request. The pull request is reviewed by someone who did not work on the feature and only after being approved is it merged onto the develop branch, thus updating it with the newest features. Remote branches will not be deleted after the merge to preserve the branching history. 
 
 
 ## Coding rules
-This section describes the general coding rules the group will work after.
+This section describes the general coding rules the group will work by.
 
 * Source Files: Each Java file contains only a single public class or interface.
 * Naming: Class names are written in UpperCamelCase and are typically nouns
 Method names are written in lowerCamelCase and are typically verbs.
 Variable names are written in lowerCamelCase and describe the variable.
 Constants are written in all uppercase letters and words are separated by underscores.
-* Commenting: All Java files begin with a c-style comment listing the class name, version information, creation date etc. Each method is
+* Commenting: All Java files begin with a c-style comment listing the class name, version information, creation date etc. Above each method there is a c-style comment with a short description of what it does, parameters are listed as well as return value.
 
 
 ## Formatting
-Each time a new block is opened the indent increases by one tab.
-Braces are used with all if, else, for, do, while statements. Even when the body is empty or contains only a single statement.
+Each time a new block is opened the indent increases by one tab. Braces are used with all if, else, for, do and while statements. The same applies when the body is empty or contains only a single statement.
+
 Example:
-for (int i; i < 0; i++) {
+for (int i = 0; i < n; i++) {
      a = i;
 }
-Each comma and semicolon is followed by a space, excluding end of each line.
-Above all methods there should be a short summary explaining its function and its parameters.
-Each line should not exceed 120 characters, after this the line should be wrapped.
 
-
-https://docs.gradle.org/current/userguide/checkstyle_plugin.html
+Each comma and semicolon is followed by a space, excluding when at the end of a line. Each line should not exceed 120 characters, after that the line will be wrapped.
 
 
 ## Testing
+Each method should be tested to avoid failures and bugs. The following tests are considered to be useful for the project:
+
 * Unit testing
 * functional testing
 * selenium
+
+Unit tests will be written and run for all methods. The other tests will be run if possible but have a lower priority than the unit tests.
