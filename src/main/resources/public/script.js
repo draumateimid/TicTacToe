@@ -1,21 +1,18 @@
 
-/*
+
+//button res11 change text
 $(document).ready(function() {
-            var field1 = document.getElementById("res1");;
-            form.submit(function ( event ) {
-                $.ajax({
-                    type: form.attr('method'),
-                    url: form.attr('action'),
-                    data: '1'
-                }).done(function(movePlayer) {
-                    $('#res1').html(movePlayer).attr('class', 'alert alert-success');
+            var form = $('form');
+            form.submit(function( event ) {
+			$.post("/tictactoe", 
+					{name:'1'}).done(function(jokeAA){
+                    $('#res11').html(jokeAA).attr('class', 'alert alert-success');
                 }).fail(function() {
-                    $('#res1').html('Something went wrong...sorry try again.').attr('class', 'alert alert-danger');
+                    $('#res11').html('Sorry!').attr('class', 'alert alert-danger');
                 });
                 event.preventDefault();
             });
         });
-*/
 
 var div1 = document.getElementById("res1");
 var p1 = document.getElementById("1")
@@ -23,19 +20,13 @@ div1.style.display="none";
 p1.style.display = "inline";
 
 function myFunction1(){
-	$('input').on('click', function () {
-		var temp = $(this).val();
-		$.ajax({
-			type: temp.attr('method'),
-			url:  temp.attr('action'),
-			data: '1'
-		}).done(function(test) {
-			$('#res1').html(test).attr('class', 'alert alert-success');
+	$.post("/tictactoe", 
+			{name:'1'}).done(function(returnValue){
+			$('#test').html(returnValue).attr('class', 'alert alert-success');
 		}).fail(function() {
-			$('#res1').html('Something went wrong...sorry try again.').attr('class', 'alert alert-danger');
+			$('#test').html('Sorry!').attr('class', 'alert alert-danger');
 		});
 		event.preventDefault();
-	})
 	div1.style.display="inline";
 	p1.style.display="none";
 	return false;

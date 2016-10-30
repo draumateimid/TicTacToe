@@ -17,7 +17,7 @@
 				<table>
 					<tbody>
 					<tr>
-						<td class="td1"> <div id = "res1"> </div> <p id = "1" method="post" action="/tictactoe" onclick="myFunction1()">ClickMe</p>  </td>
+						<td class="td1"> <div id = "res1"> <p id = "test"> </p> </div> <p id = "1" method="post" action="/tictactoe" onclick="myFunction1()">ClickMe</p>  </td>
 						<td class="td2"> <div id = "res2">X </div> <p id = "2" onclick="myFunction2()">ClickMe</p>  </td>
 						<td class="td3"> <div id = "res3">X </div> <p id = "3" onclick="myFunction3()">ClickMe</p>  </td>
 					</tr>
@@ -53,19 +53,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 		<script type="text/javascript" src="script.js" ></script>
-				<script>
-        $(document).ready(function() {
-            var form = $('form');
-            form.submit(function( event ) {
-			$.post("/tictactoe", 
-					{name:'1'}).done(function(jokeAA){
-                    $('#res11').html(jokeAA).attr('class', 'alert alert-success');
-                }).fail(function() {
-                    $('#res11').html('Sorry!').attr('class', 'alert alert-danger');
-                });
-                event.preventDefault();
-            });
-        });
-        </script>
+
     </body>
 </html>
