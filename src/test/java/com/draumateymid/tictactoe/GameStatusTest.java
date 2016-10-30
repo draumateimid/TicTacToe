@@ -39,7 +39,7 @@ public class GameStatusTest{
 
 	@Test
 	public void testDraw(){
-		char[] board = {'X', ' ', 'X', 'O', 'O', 'X', 'X', 'O', 'X'};
+		char[] board = {'X', 'X', 'O', 'O', 'O', 'X', 'X', 'O', 'X'};
 		assertEquals(true, GameStatus.draw(board)); 
 	}
 

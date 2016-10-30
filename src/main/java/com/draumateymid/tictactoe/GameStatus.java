@@ -30,7 +30,7 @@ public class GameStatus {
 				count++; 
 			}
 		}
-		if(count == 5) {
+		if(count == 5 && !checkWinner(board)) {
 			return true; 
 		}
 		return false; 
