@@ -23,11 +23,14 @@ Verify that Gradle 3.1 is installed on your machine by running 'gradle --version
 > source "~/.sdkman/bin/sdkman-init.sh"                           
 > sdk install gradle 3.1
 
-To build and/or run the project on the command line you need to run one the following commands, after having installed gradle:
+To build and/or run the project on the command line you need to run one of the following commands, after having installed gradle:
 
 'gradle build' To compile and build the project and run the unit tests.
+
 'gradle deploy' To compile, build and run the project.
+
 'gradle run' To compile, build and run the project.
+
 'bash ./bin/deploy' To compile, build and run the project.
 
 
