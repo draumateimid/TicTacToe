@@ -77,6 +77,7 @@ task myJavadocs(type: Javadoc) {
 }
 
 
+
 //
 task selenium(type: Test, dependsOn: installDist) {
 	testClassesDir = sourceSets.selenium.output.classesDir
@@ -87,6 +88,4 @@ task selenium(type: Test, dependsOn: installDist) {
 task deploy(type: Exec){ 
 	commandLine 'bash','./bin/deploy'
 }
-
-
 

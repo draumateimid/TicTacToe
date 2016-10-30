@@ -22,7 +22,7 @@ public class GameRunner{
 	*GameRunner constructor, initializes the game board
 	*with all empty fields
 	*/
-	GameRunner(){
+	public GameRunner(){
 		for (int i = 0; i < 9; i++)
 			board[i] = ' ';
 	}
@@ -46,7 +46,7 @@ public class GameRunner{
 	*
 	*@param input
 	*/
-	private static boolean isEmpty(int input){
+	public static boolean isEmpty(int input){
 		if(checkInput(input)){
 			return board[input - 1] == ' ';
 		}
@@ -114,23 +114,11 @@ public class GameRunner{
 	*
 	*@param marker
 	*/
-	public static void movePlayer(char marker){
-		int input = -1;
-		InputStream userInput = System.in;
-		checkInput(marker);
-		DisplayGameBoard.inputMessage(marker); 
-		input = getUserInput(userInput);
-		while (!isEmpty(input)){
-			DisplayGameBoard.fullFieldMessage();
-			input = getUserInput(userInput);
-		}
+	public static void movePlayer(char marker, int input){
+		checkInput(input, marker);
 		fillField(input, marker);
-		DisplayGameBoard.displayTicTac(board);
 	}
-	
-	public static void movePlayer(char marker, int pos){
-		fillField(pos,marker);
-	}
+
 	
 	/**
 	*Method continiusly asks user for input 
@@ -144,9 +132,18 @@ public class GameRunner{
 		while (input < 1  || input > 9){
 			DisplayGameBoard.invalidInputMessage();
 			input = userInput.nextInt();
+
+
+	public static char switchUser(char marker) {
+		if(marker == ' ') {
+			return 'X';
 		}
-		userInput.close();
-		return input;
+		else if(marker == 'X') {
+			return 'O'; 
+		}
+		else {
+			return 'X';
+		}
 	}
 }
 
