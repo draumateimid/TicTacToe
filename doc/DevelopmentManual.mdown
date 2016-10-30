@@ -25,14 +25,14 @@ Verify that Gradle 3.1 is installed on your machine by running 'gradle --version
 
 To build and/or run the project on the command line you need to run one of the following commands, after having installed gradle:
 
-'gradle build' To compile and build the project and run the unit tests.
-
-'gradle deploy' To compile, build and run the project.
-
-'gradle run' To compile, build and run the project.
-
-'bash ./bin/deploy' To compile, build and run the project.
-
+* 'gradle build' To compile and build the project and run the unit tests.
+* 'gradle run' To compile, build and run the project.
+* 'gradle deploy' To compile, build and run the project.
+* 'bash ./bin/deploy' To compile, build and run the project.
+* 'gradle javadoc' creates java documentation.
+* 'gradle cobertura' compiles the project and evaluates unit testing code coverage.
+* 'gradle selenium' runs the selenium tests.
+* 'gradle stage' prepares Heroku deployment.
 
 ## Other
 Information on collaboration, coding rules and Github workflow can be viewed in the Design Report.

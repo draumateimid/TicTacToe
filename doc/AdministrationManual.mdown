@@ -5,7 +5,7 @@
 No minimum requirement.
 
 ## Game setup
-Navigate to the location of the TicTakToe folder select bin and:
+Navigate to the location of the TicTacToe folder select bin and:
 
 
 |OS       | Task  						|
@@ -14,4 +14,4 @@ Navigate to the location of the TicTakToe folder select bin and:
 |Linux    |bash TicTacToe        		|
 
 ## New version
-In the unlikely event of an new version. Throw away the TicTacToe game and replace it with the new file.
+In the event of a new version. Throw away the TicTacToe game and replace it with the new file.
