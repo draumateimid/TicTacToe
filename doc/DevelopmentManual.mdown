@@ -7,6 +7,7 @@ Verify that Java is installed on your machine - JDK 1.8.0_101. You do that by ru
 If not, you need to download it and add its location to your System path:
 
 Append the location of the Java compiler to your System path.
+
 |OS 		|   														|
 |----------	|-------													|
 |Windows	| Append the location of JDK to system variable path.		|
@@ -30,4 +31,3 @@ To build and/or run the project on the command line you need to run the followin
 
 ## Other
 Information on collaboration, coding rules and Github workflow can be viewed in the Design Report.
-
