@@ -17,7 +17,7 @@
 				<table>
 					<tbody>
 					<tr>
-						<td class="td1"> <div id = "res1"> </div> <p id = "1" onclick="myFunction1()">ClickMe</p>  </td>
+						<td class="td1"> <div id = "res1"> </div> <p id = "1" method="post" action="/tictactoe" onclick="myFunction1()">ClickMe</p>  </td>
 						<td class="td2"> <div id = "res2">X </div> <p id = "2" onclick="myFunction2()">ClickMe</p>  </td>
 						<td class="td3"> <div id = "res3">X </div> <p id = "3" onclick="myFunction3()">ClickMe</p>  </td>
 					</tr>
@@ -34,49 +34,38 @@
 					</tbody>
 				</table>
 			</div>
-			
-
-            <form method="post" action="/setName" class="form-inline" role="form">
-                <div class="form group">
-                    <input type="text" name="firstName" id="firstName"
-                    placeholder="Chuck">
-                </div>
-                <div class="form group">
-                    <input type="text" name="lastName" id="lastName"
-                    placeholder="Norris">
-                </div>
-                <button type="submit"> ok </button>
-            </form>
-            <hr>
-            <div id="results" class="alert alert-info">Try it out.</div>
-            <hr>
+		
         </div>
 
 		
+		
+		
+		
+		<form method="post" action="/tictactoe" class="form-inline" role="form">
+                <button type="submit">click</button>
+		</form>
+		<div id="res11" class="alert alert-info" name="name">
+			How many Chuck Norris require to screw a light
+			bulb? None, he will screw it all.
+		</div>
+	
         <!-- Load jquery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-        <!-- Use ajax to submit form, retrive joke and display on page -->
-        <script>
+		<script type="text/javascript" src="script.js" ></script>
+				<script>
         $(document).ready(function() {
             var form = $('form');
             form.submit(function( event ) {
-                var firstName = $("#firstName").val();
-                var lastName = $("#lastName").val();
-                $.ajax({
-                    type: form.attr('method'),
-                    url: form.attr('action'),
-                    data: 'firstName=' + firstName + '&lastName=' + lastName
-                }).done(function() {
-                    $('#results').html('Name set as: ' + firstName + ' ' +
-                        lastName + '.').attr('class', 'alert alert-success');
+			$.post("/tictactoe", 
+					{name:'1'}).done(function(jokeAA){
+                    $('#res11').html(jokeAA).attr('class', 'alert alert-success');
                 }).fail(function() {
-                    $('#results').html('Unable to set name...').attr('class', 'alert alert-danger');
+                    $('#res11').html('Sorry!').attr('class', 'alert alert-danger');
                 });
                 event.preventDefault();
             });
         });
         </script>
-		<script type="text/javascript" src="script.js" ></script>
     </body>
 </html>
