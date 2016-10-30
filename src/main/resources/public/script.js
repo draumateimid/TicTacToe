@@ -10,10 +10,15 @@ p1.style.display = "inline";
 function myFunction1(){
 	$.post("/tictactoe", 
 			{name:'1'}).done(function(returnValue){
-				if(returnValue.localeCompare("winner") == 0) {
-					//$().redirect("/winner", {'input': "test" });
-					 window.location.href = "/winner.html";
-				}	
+				if(returnValue.localeCompare("winnerX") == 0) {
+					 window.location.href = "/winnerX.html";
+				}
+				else if(returnValue.localeCompare("winnerO") == 0){
+					window.location.href = "/winnerO.html";
+				}
+				else if(returnValue.localeCompare("draw") == 0){
+					window.location.href = "/draw.html";
+				}
 				$('#field1').html(returnValue).attr('class', ' ');
 			}).fail(function() {
 			$('#field1').html('Sorry!').attr('class', 'alert alert-danger');
@@ -23,7 +28,7 @@ function myFunction1(){
 	p1.style.display="none";
 	return false;
 	}
-
+	
 var div2 = document.getElementById("res2");
 var p2 = document.getElementById("2")
 div2.style.display="none";
@@ -31,6 +36,15 @@ p2.style.display = "inline";
 function myFunction2(){
 	$.post("/tictactoe", 
 			{name:'2'}).done(function(returnValue){
+				if(returnValue.localeCompare("winnerX") == 0) {
+					 window.location.href = "/winnerX.html";
+				}
+				else if(returnValue.localeCompare("winnerO") == 0){
+					window.location.href = "/winnerO.html";
+				}
+				else if(returnValue.localeCompare("draw") == 0){
+					window.location.href = "/draw.html";
+				}
 			$('#field2').html(returnValue).attr('class', ' ');
 		}).fail(function() {
 			$('#field2').html('Sorry!').attr('class', 'alert alert-danger');
@@ -48,6 +62,15 @@ p3.style.display = "inline";
 function myFunction3(){
 	$.post("/tictactoe", 
 			{name:'3'}).done(function(returnValue){
+				if(returnValue.localeCompare("winnerX") == 0) {
+					 window.location.href = "/winnerX.html";
+				}
+				else if(returnValue.localeCompare("winnerO") == 0){
+					window.location.href = "/winnerO.html";
+				}
+				else if(returnValue.localeCompare("draw") == 0){
+					window.location.href = "/draw.html";
+				}
 			$('#field3').html(returnValue).attr('class', ' ');
 		}).fail(function() {
 			$('#field3').html('Sorry!').attr('class', 'alert alert-danger');
@@ -65,6 +88,15 @@ p4.style.display = "inline";
 function myFunction4(){
 	$.post("/tictactoe", 
 			{name:'4'}).done(function(returnValue){
+				if(returnValue.localeCompare("winnerX") == 0) {
+					 window.location.href = "/winnerX.html";
+				}
+				else if(returnValue.localeCompare("winnerO") == 0){
+					window.location.href = "/winnerO.html";
+				}
+				else if(returnValue.localeCompare("draw") == 0){
+					window.location.href = "/draw.html";
+				}
 			$('#field4').html(returnValue).attr('class', ' ');
 		}).fail(function() {
 			$('#field4').html('Sorry!').attr('class', 'alert alert-danger');
@@ -82,6 +114,15 @@ p5.style.display = "inline";
 function myFunction5(){
 	$.post("/tictactoe", 
 			{name:'5'}).done(function(returnValue){
+				if(returnValue.localeCompare("winnerX") == 0) {
+					 window.location.href = "/winnerX.html";
+				}
+				else if(returnValue.localeCompare("winnerO") == 0){
+					window.location.href = "/winnerO.html";
+				}
+				else if(returnValue.localeCompare("draw") == 0){
+					window.location.href = "/draw.html";
+				}
 			$('#field5').html(returnValue).attr('class', ' ');
 		}).fail(function() {
 			$('#field5').html('Sorry!').attr('class', 'alert alert-danger');
@@ -99,6 +140,15 @@ p6.style.display = "inline";
 function myFunction6(){
 	$.post("/tictactoe", 
 			{name:'6'}).done(function(returnValue){
+				if(returnValue.localeCompare("winnerX") == 0) {
+					 window.location.href = "/winnerX.html";
+				}
+				else if(returnValue.localeCompare("winnerO") == 0){
+					window.location.href = "/winnerO.html";
+				}
+				else if(returnValue.localeCompare("draw") == 0){
+					window.location.href = "/draw.html";
+				}
 			$('#field6').html(returnValue).attr('class', ' ');
 		}).fail(function() {
 			$('#field6').html('Sorry!').attr('class', 'alert alert-danger');
@@ -116,6 +166,15 @@ p7.style.display = "inline";
 function myFunction7(){
 	$.post("/tictactoe", 
 			{name:'7'}).done(function(returnValue){
+				if(returnValue.localeCompare("winnerX") == 0) {
+					 window.location.href = "/winnerX.html";
+				}
+				else if(returnValue.localeCompare("winnerO") == 0){
+					window.location.href = "/winnerO.html";
+				}
+				else if(returnValue.localeCompare("draw") == 0){
+					window.location.href = "/draw.html";
+				}
 			$('#field7').html(returnValue).attr('class', ' ');
 		}).fail(function() {
 			$('#field7').html('Sorry!').attr('class', 'alert alert-danger');
@@ -133,6 +192,15 @@ p8.style.display = "inline";
 function myFunction8(){
 	$.post("/tictactoe", 
 			{name:'8'}).done(function(returnValue){
+				if(returnValue.localeCompare("winnerX") == 0) {
+					 window.location.href = "/winnerX.html";
+				}
+				else if(returnValue.localeCompare("winnerO") == 0){
+					window.location.href = "/winnerO.html";
+				}
+				else if(returnValue.localeCompare("draw") == 0){
+					window.location.href = "/draw.html";
+				}
 			$('#field8').html(returnValue).attr('class', ' ');
 		}).fail(function() {
 			$('#field8').html('Sorry!').attr('class', 'alert alert-danger');
@@ -150,6 +218,15 @@ p9.style.display = "inline";
 function myFunction9(){
 	$.post("/tictactoe", 
 			{name:'9'}).done(function(returnValue){
+				if(returnValue.localeCompare("winnerX") == 0) {
+					 window.location.href = "/winnerX.html";
+				}
+				else if(returnValue.localeCompare("winnerO") == 0){
+					window.location.href = "/winnerO.html";
+				}
+				else if(returnValue.localeCompare("draw") == 0){
+					window.location.href = "/draw.html";
+				}
 			$('#field9').html(returnValue).attr('class', ' ');
 		}).fail(function() {
 			$('#field9').html('Sorry!').attr('class', 'alert alert-danger');

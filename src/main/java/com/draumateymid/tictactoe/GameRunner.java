@@ -127,6 +127,11 @@ public class GameRunner{
 		fillField(input, marker);
 		DisplayGameBoard.displayTicTac(board);
 	}
+	
+	public static void movePlayer(char marker, int pos){
+		fillField(pos,marker);
+	}
+	
 	/**
 	*Method continiusly asks user for input 
 	*until input is between 1 - 9

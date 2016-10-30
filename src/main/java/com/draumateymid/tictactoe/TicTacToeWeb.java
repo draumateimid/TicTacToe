@@ -33,12 +33,7 @@ public class TicTacToeWeb implements SparkApplication {
 		post("/tictactoe", (req, res) -> 
 
 			{ 
-					if(controller.status().equals("X")){
-						return "winner";
-					}
-					else{
-						return "winner";//controller.test((String) req.queryParams("name"));
-					}
+				return controller.makeMove((String) req.queryParams("name"));
 			}
 		);
 		post("/winner", (req, res) ->  "");
