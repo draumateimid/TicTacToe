@@ -28,11 +28,12 @@ public class TicTacToeWeb implements SparkApplication {
         //final Chuck chuck = new Chuck();    
         get("/random", (req, res) -> "Some string");
         get("/id", (req, res) -> "Some string");
-		post("/tictactoe", (req, res) -> test((String) req.queryParams("name")) );
+		post("/tictactoe", (req, res) -> gameController((String) req.queryParams("name")) );
 	
     }
 	
-	public String test(String data){
+	
+	public String gameController(String data){
 		if (data.equals("1"))
 			return "asdf";
 		return data;
