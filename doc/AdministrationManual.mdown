@@ -1,25 +1,17 @@
-### Administration Manual
+# Administration Manual
 
-TicTacToe is a .....
 
 ## System Requirement
 No minimum requirement.
- 
-## 
-Step 1.
-|OS       | Task   |
-|---------|--------|
-|Windows  |        |
-|Linux    |        |
-|Mac      |        |
 
-Step 2.
-|OS       | Task   |
-|---------|--------|
-|Windows  |        |
-|Linux    |        |
-|Mac      |        |
+## Game setup
+Navigate to the location of the TicTakToe folder select bin and:
 
 
-hugmynd að uppsetningu:
-https://www.tutorialspoint.com/easymock/easymock_environment_setup.htm
+|OS       | Task  						|
+|---------|-----------------------------|
+|Windows  |Select TicTacToe.bat        	|
+|Linux    |bash TicTacToe        		|
+
+## New version
+In the unlikly event of an new verstion. Thow away the TicTackToe game and replase it with the new file.
