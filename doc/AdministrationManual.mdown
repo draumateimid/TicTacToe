@@ -1,0 +1,17 @@
+# Administration Manual
+
+
+## System Requirement
+No minimum requirement.
+
+## Game setup
+Navigate to the location of the TicTacToe folder select bin and:
+
+
+|OS       | Task  						|
+|---------|-----------------------------|
+|Windows  |Select TicTacToe.bat        	|
+|Linux    |bash TicTacToe        		|
+
+## New version
+In the event of a new version. Throw away the TicTacToe game and replace it with the new file.
