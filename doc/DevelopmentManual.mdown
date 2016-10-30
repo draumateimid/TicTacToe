@@ -30,3 +30,4 @@ To build and/or run the project on the command line you need to run the followin
 
 ## Other
 Information on collaboration, coding rules and Github workflow can be viewed in the Design Report.
+
