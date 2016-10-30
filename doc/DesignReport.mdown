@@ -5,6 +5,9 @@ TicTacToe is a game that is often played with paper and pencil. The purpose of t
 ## The Game
 In both versions the game is designed for two human players. Player X makes the first move. Next player O makes a move and in that manner the two players take turns making their move. Each move involves choosing a field on a 3x3 board and consequently the field is marked with the players symbol. The player who manages to make three symbols in a row wins the game. The rows can be vertical, horizontal and diagonal. If all nine fields on the board have been filled up with either ‘X’ or ‘O’ and neither player managed to get three in a row the game ends with a draw.
 
+![alt text][logo]
+
+[logo]: TicTacToe.png
 
 ### The console version
 The game runs in a console environment such as command prompt, git bash or Linux terminal. The two players decide who is player one and player two and take turns entering a number from 1-9 that represents a field on the game board. The chosen field is filled up with an X for player one and an O for player two. If one of the players manages to fill a row of three with his symbol the game writes out a message declaring that player the winner and the game stops running. If neither player manages a win the game prints out that a draw has been made and the game stops sunning.
@@ -12,11 +15,6 @@ The game runs in a console environment such as command prompt, git bash or Linux
 ### The web based version
 The game runs on a website. The players see an empty TicTacToe board and choose a field by clicking on it with the mouse. After the click the field is marked with an X for the first player and an O for the second player. As with the console version, the game prints out a message if either player has won or if there is a draw. In this instance it is done by redirecting to a new url with the message. In both cases the game ends but the players get the option to start a new game by clicking the relevant button. 
 
-![alt text][logo]
-
-[logo]: TicTacToe.png
-
-## The web version
 
 ## Noun Identification
 From the description in previous section (The Game) these nouns have been subtracted as potential class names:
@@ -92,9 +90,12 @@ Constants are written in all uppercase letters and words are separated by unders
 Each time a new block is opened the indent increases by one tab. Braces are used with all if, else, for, do and while statements. The same applies when the body is empty or contains only a single statement.
 
 Example:
+
+```javascript
 for (int i = 0; i < n; i++) {
      a = i;
 }
+```
 
 Each comma and semicolon is followed by a space, excluding when at the end of a line. Each line should not exceed 120 characters, after that the line will be wrapped.
 
