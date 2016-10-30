@@ -1,3 +1,6 @@
 ### Development manual
 
 # Development Manual
+
+
+JDK 1.8.0_101
