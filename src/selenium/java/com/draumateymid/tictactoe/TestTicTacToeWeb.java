@@ -12,8 +12,6 @@ import org.openqa.selenium.Keys;
 
 public class TestTicTacToeWeb extends SeleniumTestWrapper {
 	
-	
-	
 	@Test
     public void TestNavigateFromIndexToGame() throws InterruptedException{
         driver.get("http://localhost:" + "4567" + "/index.html");
@@ -33,8 +31,8 @@ public class TestTicTacToeWeb extends SeleniumTestWrapper {
 		WebElement value = driver.findElement(By.id("1"));
 		value.click();
 		
-		value = driver.findElement(By.id("1"));
+		value = driver.findElement(By.id("field1"));
 		Thread.sleep(3000);
-		assertEquals(value.getText(), "X");
+		assertEquals( "X" ,value.getText());
 	}
 }
