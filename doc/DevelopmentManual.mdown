@@ -1,6 +1,32 @@
-### Development manual
+# Development manual
 
-# Development Manual
+## Java
+
+Verify Java Installation on your machine - JDK 1.8.0_101
+
+If not you need to download it and set Java Enviroment variable to point to the base directory location where Java installed on your machine.
+|OS 		|   														|
+|----------	|-------													|
+|Windows	| Set the enviroment variable JAVA_HOME to your JDK location|
+|Linux		| export JAVA_HOME=/usr/local/java-current					|
+
+Append the location of the Java compiler to your System path.
+|OS 		|   														|
+|----------	|-------													|
+|Windows	| Append the location of JDK to system variable path.		|
+|Linux		| export PATH=$PATH:$JAVA_HOME/bim							|
+
+The repository for the project TicTacToe is hosted at Github.com the link is https://github.com/draumateymid/TicTacToe. 
+
+## Gradle
+
+Verify that Gradle 3.1 is installed on your machine by running gradle --version on command line. If not you need to install it with SDK. Run the commands.
 
 
-JDK 1.8.0_101
+> curl -s https://get.sdkman.is | bash                           
+> source "~/.sdkman/bin/sdkman-init.sh"                           
+> sdk install gradle 3.1
+
+
+## Other
+Collaboration, Coding rules and Github workflow can be viewed in the Design Report.
