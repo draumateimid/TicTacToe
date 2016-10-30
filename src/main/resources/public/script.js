@@ -10,8 +10,12 @@ p1.style.display = "inline";
 function myFunction1(){
 	$.post("/tictactoe", 
 			{name:'1'}).done(function(returnValue){
-			$('#field1').html(returnValue).attr('class', ' ');
-		}).fail(function() {
+				if(returnValue.localeCompare("winner") == 0) {
+					//$().redirect("/winner", {'input': "test" });
+					 window.location.href = "/winner.html";
+				}	
+				$('#field1').html(returnValue).attr('class', ' ');
+			}).fail(function() {
 			$('#field1').html('Sorry!').attr('class', 'alert alert-danger');
 		});
 		event.preventDefault();
