@@ -1,4 +1,4 @@
-[![Build Status](your travis urlfor the repo here.png)](your travis url for the repohere)
+[![Build Status](Draumateymid.png)](https://travis-ci.org/draumateymid/TicTacToe)
 Late-term Assignment
 
 Purpose

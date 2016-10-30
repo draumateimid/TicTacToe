@@ -63,4 +63,3 @@ public class TicTacToe {
 		return input;
 	}
 }
-
