@@ -2,6 +2,8 @@ package com.draumateymid.tictactoe;
 
 import java.io.InputStream; 
 import java.util.Scanner; 
+import java.io.Console; 
+import java.io.*; 
 
 /**
 *##TicTacToe class
@@ -15,13 +17,27 @@ import java.util.Scanner;
 public class TicTacToe {
 
 	public static void main(String[] args) {
-		GameRunner runner = new GameRunner();
-		Scanner userInput = new Scanner(System.in); 
+		GameRunner runner = new GameRunner();	
+		Scanner userInput = new Scanner(System.in);
 		char marker = ' '; 
+		int input = -1; 
+
 		while(!GameStatus.gameIsOver(runner.getBoard())) { 
-			marker = switchUser(marker); 
+
+			marker = runner.switchUser(marker); 
+
 			DisplayGameBoard.inputMessage(marker);
-			runner.movePlayer(marker, getUserInput(userInput));
+
+			input = getUserInput(userInput);
+
+			while(!runner.isEmpty(input)) {
+				DisplayGameBoard.fullFieldMessage(); 
+				input = getUserInput(userInput);
+			}
+			
+			runner.movePlayer(marker, input);
+
+			DisplayGameBoard.displayTicTac(runner.getBoard());
 
 			if(GameStatus.checkWinner(runner.getBoard())) {
 				DisplayGameBoard.makeWinner(marker);
@@ -37,20 +53,9 @@ public class TicTacToe {
 		userInput.close(); 		
 	}
 
-	private static char switchUser(char marker) {
-		if(marker == ' ') {
-			return 'X';
-		}
-		else if(marker == 'X') {
-			return 'O'; 
-		}
-		else {
-			return 'X';
-		}
-	}
-
 	private static int getUserInput(Scanner userInput){
-		int input = userInput.nextInt(); 
+		int input = userInput.nextInt();
+		
 		while (input < 1  || input > 9){
 			DisplayGameBoard.invalidInputMessage();
 			input = userInput.nextInt(); 

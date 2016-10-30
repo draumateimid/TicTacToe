@@ -46,7 +46,7 @@ public class GameRunner{
 	*
 	*@param input
 	*/
-	private static boolean isEmpty(int input){
+	public static boolean isEmpty(int input){
 		if(checkInput(input)){
 			return board[input - 1] == ' ';
 		}
@@ -115,17 +115,25 @@ public class GameRunner{
 	*@param marker
 	*/
 	public static void movePlayer(char marker, int input){
-		//int input = -1;
-		//InputStream userInput = System.in;
-		checkInput(marker);
-		DisplayGameBoard.inputMessage(marker); 
-		//input = getUserInput(userInput);
-		while (!isEmpty(input)){
-			DisplayGameBoard.fullFieldMessage();
-			//input = getUserInput(input);
-		}
+		checkInput(input, marker);
+		//if (!isEmpty(input)){
+		//	DisplayGameBoard.fullFieldMessage();
+			//Get input 
+			//Þetta var while lykkja 
+		//}
 		fillField(input, marker);
-		DisplayGameBoard.displayTicTac(board);
+	}
+
+	public static char switchUser(char marker) {
+		if(marker == ' ') {
+			return 'X';
+		}
+		else if(marker == 'X') {
+			return 'O'; 
+		}
+		else {
+			return 'X';
+		}
 	}
 }
 
