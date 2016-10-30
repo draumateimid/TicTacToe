@@ -26,31 +26,23 @@ public class GameControllerTest{
 	
 	@Test
 	public void makeMoveXWinnerTest(){
-		controller.makeMove("1");
-		controller.makeMove("2");
-		controller.makeMove("4");
-		controller.makeMove("5");
+		controller.makeMove("1");//X
+		controller.makeMove("2");//O
+		controller.makeMove("4");//X
+		controller.makeMove("5");//O
 		assertEquals("winnerX", controller.makeMove("7"));
 	}
 	
 	@Test
 	public void makeMoveOWinnerTest(){
-		controller.makeMove("2");
-		controller.makeMove("1");
-		controller.makeMove("3");
-		controller.makeMove("4");
-		controller.makeMove("5");
-		assertEquals("winnerO", controller.makeMove("7"));
+		controller = new GameController();
+		controller.makeMove("1");//X
+		controller.makeMove("2");//O
+		controller.makeMove("3");//X
+		controller.makeMove("5");//O
+		controller.makeMove("9");//X
+		assertEquals("winnerO", controller.makeMove("8"));
 	}
 	
-	@Test
-	public void makeMoveDrawTest(){
-		controller.makeMove("2");
-		controller.makeMove("1");
-		controller.makeMove("3");
-		controller.makeMove("4");
-		controller.makeMove("5");
-		assertEquals("winnerO", controller.makeMove("7"));
-	}
 }
 

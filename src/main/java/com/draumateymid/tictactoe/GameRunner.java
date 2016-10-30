@@ -116,11 +116,6 @@ public class GameRunner{
 	*/
 	public static void movePlayer(char marker, int input){
 		checkInput(input, marker);
-		//if (!isEmpty(input)){
-		//	DisplayGameBoard.fullFieldMessage();
-			//Get input 
-			//Þetta var while lykkja 
-		//}
 		fillField(input, marker);
 	}
 
