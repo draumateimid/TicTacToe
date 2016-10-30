@@ -12,12 +12,29 @@ import org.openqa.selenium.Keys;
 
 public class TestTicTacToeWeb extends SeleniumTestWrapper {
 	
+	
+	
 	@Test
     public void TestNavigateFromIndexToGame() throws InterruptedException{
-        driver.get(baseUrl + "/index.html");
+        driver.get("http://localhost:" + "4567" + "/index.html");
 		WebElement clickLink = driver.findElement(By.id("gameLink"));
 		clickLink.click();
 		Thread.sleep(3000);
 		assertThat(driver.getCurrentUrl(), containsString("tictactoe"));
+	}
+	
+	@Test
+    public void setXinLeftTopCorner() throws InterruptedException{
+        driver.get(baseUrl + "/index.html");
+		WebElement clickLink = driver.findElement(By.id("gameLink"));
+		clickLink.click();
+		Thread.sleep(3000);
+		
+		WebElement value = driver.findElement(By.id("1"));
+		value.click();
+		
+		value = driver.findElement(By.id("1"));
+		Thread.sleep(3000);
+		assertEquals(value.getText(), "X");
 	}
 }
