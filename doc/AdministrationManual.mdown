@@ -14,4 +14,4 @@ Navigate to the location of the TicTakToe folder select bin and:
 |Linux    |bash TicTacToe        		|
 
 ## New version
-In the unlikly event of an new verstion. Thow away the TicTackToe game and replase it with the new file.
+In the unlikely event of an new version. Throw away the TicTacToe game and replace it with the new file.
