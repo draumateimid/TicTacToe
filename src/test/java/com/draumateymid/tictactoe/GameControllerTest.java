@@ -17,7 +17,7 @@ public class GameControllerTest{
 	}
 }
 
-class stubGameStatus implements GameStatus {
+class stubGameStatus extends GameStatus {
 
 	public stubGameStatus(){
 		
