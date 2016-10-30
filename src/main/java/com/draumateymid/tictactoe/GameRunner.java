@@ -114,34 +114,18 @@ public class GameRunner{
 	*
 	*@param marker
 	*/
-	public static void movePlayer(char marker){
-		int input = -1;
-		InputStream userInput = System.in;
+	public static void movePlayer(char marker, int input){
+		//int input = -1;
+		//InputStream userInput = System.in;
 		checkInput(marker);
 		DisplayGameBoard.inputMessage(marker); 
-		input = getUserInput(userInput);
+		//input = getUserInput(userInput);
 		while (!isEmpty(input)){
 			DisplayGameBoard.fullFieldMessage();
-			input = getUserInput(userInput);
+			//input = getUserInput(input);
 		}
 		fillField(input, marker);
 		DisplayGameBoard.displayTicTac(board);
-	}
-	/**
-	*Method continiusly asks user for input 
-	*until input is between 1 - 9
-	*
-	*@param in
-	*/
-	private static int getUserInput(InputStream in){
-		Scanner userInput = new Scanner(in);
-		int input = userInput.nextInt();
-		while (input < 1  || input > 9){
-			DisplayGameBoard.invalidInputMessage();
-			input = userInput.nextInt();
-		}
-		userInput.close();
-		return input;
 	}
 }
 
