@@ -10,12 +10,8 @@ public class TicTacToeWeb implements SparkApplication {
 	
 	public static void main(String [] args)
 	{
-		
 		staticFileLocation("/public");
-        SparkApplication TicTacToeWeb = new TicTacToeWeb(); //TicTacToeweb
-		
-		
-		System.out.println("Hello");
+        SparkApplication TicTacToeWeb = new TicTacToeWeb();
 		
 		String port = System.getenv("PORT");
         if (port != null) {
@@ -26,8 +22,7 @@ public class TicTacToeWeb implements SparkApplication {
 	}
 	
 	@Override
-    public void init() {
-        //final Chuck chuck = new Chuck();    
+    public void init() {   
         get("/random", (req, res) -> "Some string");
         get("/id", (req, res) -> "Some string");
 		post("/tictactoe", (req, res) -> 
@@ -44,21 +39,10 @@ public class TicTacToeWeb implements SparkApplication {
 			return "asdf";
 		
 		return "X";
-		//post("/tictactoe", (req, res) -> chuck.getById(req.queryParams("id")));
-		
 	}
-
 }
 
-/*
-	@Override
-    public void init() {
-        //final Chuck chuck = new Chuck();    
-        get("/random", (req, res) -> "Some string");
-        get("/id", (req, res) -> "Some string");
-		post("/tictactoe", (req, res) -> controller.test((String) req.queryParams("name")) );
-    }
-*/
+
 
 
 

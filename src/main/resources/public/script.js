@@ -1,7 +1,4 @@
 
-
-
-
 var div1 = document.getElementById("res1");
 var p1 = document.getElementById("1")
 div1.style.display="none";
