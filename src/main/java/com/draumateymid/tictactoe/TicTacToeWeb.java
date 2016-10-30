@@ -12,7 +12,7 @@ public class TicTacToeWeb implements SparkApplication {
 		staticFileLocation("/public");
         SparkApplication TicTacToeWeb = new TicTacToeWeb(); //TicTacToeweb
 		
-		get("/hello", (req, res) -> "Hello World");
+		get("", (req, res) -> "Hello World");
 		System.out.println("Hello");
 		
 		String port = System.getenv("PORT");
@@ -26,8 +26,8 @@ public class TicTacToeWeb implements SparkApplication {
 	@Override
     public void init() {
         //final Chuck chuck = new Chuck();    
-        post("/random", (req, res) -> "Some string");
-        post("/id", (req, res) -> "Some string");
+        get("/random", (req, res) -> "Some string");
+        get("/id", (req, res) -> "Some string");
     }
 
 }
