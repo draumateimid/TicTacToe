@@ -116,23 +116,13 @@ public class GameRunner{
 	*/
 	public static void movePlayer(char marker, int input){
 		checkInput(input, marker);
+		//if (!isEmpty(input)){
+		//	DisplayGameBoard.fullFieldMessage();
+			//Get input 
+			//Þetta var while lykkja 
+		//}
 		fillField(input, marker);
 	}
-
-	
-	/**
-	*Method continiusly asks user for input 
-	*until input is between 1 - 9
-	*
-	*@param in
-	*/
-	private static int getUserInput(InputStream in){
-		Scanner userInput = new Scanner(in);
-		int input = userInput.nextInt();
-		while (input < 1  || input > 9){
-			DisplayGameBoard.invalidInputMessage();
-			input = userInput.nextInt();
-
 
 	public static char switchUser(char marker) {
 		if(marker == ' ') {
@@ -146,4 +136,3 @@ public class GameRunner{
 		}
 	}
 }
-
