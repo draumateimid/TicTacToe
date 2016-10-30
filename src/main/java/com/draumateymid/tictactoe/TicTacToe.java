@@ -11,29 +11,29 @@ package com.draumateymid.tictactoe;
 
 public class TicTacToe {
 
-	//private GameRunner runner = new GameRunner();
+	private static GameRunner runner = new GameRunner();
 	//private GameStatus board = new GameStatus();
 	//private DisplayGameBoard display = new DisplayGameBoard(runner.getBoard());
 
-	public static void main(String[] args){
+	public static void main(String[] args) {
 	
-		while(!GameStatus.gameIsOver(GameRunner.getBoard())){
+		while(!GameStatus.gameIsOver(runner.getBoard())) {
 
-			GameRunner.movePlayer('X');
+			runner.movePlayer('X');
 
-			if(GameStatus.checkWinner(GameRunner.getBoard())){
+			if(GameStatus.checkWinner(runner.getBoard())) {
 				DisplayGameBoard.makeWinner('X');
    				break;
 			}
    				
-			else if(GameStatus.draw(GameRunner.getBoard())){
+			if(GameStatus.draw(runner.getBoard())) {
 				DisplayGameBoard.makeDraw();
 				break;
 			}
 				
-			GameRunner.movePlayer('O');
+			runner.movePlayer('O');
 
-			if(GameStatus.checkWinner(GameRunner.getBoard())){
+			if(GameStatus.checkWinner(runner.getBoard())) {
 				DisplayGameBoard.makeWinner('O');
 				break;
 			}
