@@ -34,12 +34,6 @@ public class TicTacToeWeb implements SparkApplication {
 		post("/winner", (req, res) ->  "");
     }
 
-	public String gameController(String data){
-		if (data.equals("1"))
-			return "asdf";
-		
-		return "X";
-	}
 }
 
 
